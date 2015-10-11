@@ -1,0 +1,1716 @@
+﻿/*
+Created: 23-Sep-15
+Modified: 09-Oct-15
+Model: Emobile Product Mysql
+Database: MySQL 5.1
+*/
+
+
+
+-- Create tables section -------------------------------------------------
+
+-- Table access_group_header
+
+CREATE TABLE access_group_header
+(
+  id Int NOT NULL AUTO_INCREMENT,
+  access_name Varchar(30),
+  access_status Varchar(25),
+  remark Varchar(100),
+  created_by Int NOT NULL,
+  created_on Datetime NOT NULL,
+  updated_by Int NOT NULL,
+  updated_on Datetime NOT NULL,
+ PRIMARY KEY (id),
+ UNIQUE INDEX acc_header_idx1 (id)
+)
+;
+
+-- Table account
+
+CREATE TABLE account
+(
+  account_no Varchar(25) NOT NULL,
+  cif_id Int,
+  card_no Varchar(30),
+  account_type Varchar(2),
+  acc_index Int,
+  status Varchar(1),
+  remarks Varchar(50),
+  created_on Datetime NOT NULL,
+  created_by Int NOT NULL,
+  updated_on Datetime NOT NULL,
+  updated_by Int NOT NULL,
+  acoount_group Varchar(2)
+)
+;
+
+ALTER TABLE account ADD PRIMARY KEY (account_no)
+;
+
+CREATE UNIQUE INDEX acc_idx1 ON account (account_no,cif_id)
+;
+
+-- Table bank
+
+CREATE TABLE bank
+(
+  id Int NOT NULL AUTO_INCREMENT,
+  bank_code Varchar(10) NOT NULL,
+  bank_name Varchar(50),
+  switching Varchar(30),
+  remarks Varchar(100),
+  is_shown Int,
+  created_by Int NOT NULL,
+  created_on Datetime NOT NULL,
+  updated_by Int NOT NULL,
+  updated_on Datetime NOT NULL,
+ PRIMARY KEY (id)
+)
+;
+
+CREATE UNIQUE INDEX bank_idx1 ON bank (bank_code)
+;
+
+-- Table cachevo
+
+CREATE TABLE cachevo
+(
+  id Varchar(25) NOT NULL,
+  expiration Datetime,
+  vo1 Varchar(4000),
+  vo2 Varchar(4000),
+  syslogno Varchar(20),
+  created_on Datetime
+)
+;
+
+ALTER TABLE cachevo ADD UNIQUE id (id)
+;
+
+-- Table cif
+
+CREATE TABLE cif
+(
+  id Int NOT NULL AUTO_INCREMENT,
+  device_code Varchar(30) NOT NULL,
+  access_id Int,
+  host_cif_id Varchar(25),
+  cif_name Varchar(40),
+  identity_code Varchar(100),
+  cif_lang Varchar(2),
+  cif_group Varchar(2),
+  pin Varchar(32),
+  pin_count Int DEFAULT 0,
+  hasstk Int,
+  activation_date Datetime,
+  pin_change_date Datetime,
+  status Varchar(1),
+  auth_status Varchar(1),
+  remarks Varchar(50),
+  created_on Datetime NOT NULL,
+  created_by Int NOT NULL,
+  auth_on Datetime,
+  auth_by Int,
+  updated_on Datetime NOT NULL,
+  updated_by Int NOT NULL,
+  email Varchar(30),
+  use_blast_sms Int,
+  need_change_pin Char(1),
+  birth_date Datetime,
+  address Varchar(250),
+  mother_name Varchar(200),
+ PRIMARY KEY (id)
+)
+;
+
+CREATE UNIQUE INDEX cif_idx1 ON cif (device_code)
+;
+
+-- Table fee_temp_body
+
+CREATE TABLE fee_temp_body
+(
+  id Int NOT NULL AUTO_INCREMENT,
+  fee_temp_header_id Int NOT NULL,
+  service_type Varchar(22) NOT NULL,
+  staging_bank_acc Varchar(22),
+  staging_acc_pin Varchar(32),
+  ssp_bank_acc Varchar(22),
+  service_bank_acc Varchar(22),
+  remarks Varchar(100),
+  auth_status Varchar(2),
+  auth_by Int,
+  auth_on Datetime,
+  created_by Int NOT NULL,
+  created_on Datetime NOT NULL,
+  updated_by Int NOT NULL,
+  updated_on Datetime NOT NULL,
+ PRIMARY KEY (id)
+)
+;
+
+-- Table fee_temp_header
+
+CREATE TABLE fee_temp_header
+(
+  id Int NOT NULL AUTO_INCREMENT,
+  name Varchar(30) NOT NULL,
+  status Varchar(1),
+  remarks Varchar(100),
+  created_by Int NOT NULL,
+  created_on Datetime NOT NULL,
+  updated_by Int NOT NULL,
+  updated_on Datetime NOT NULL,
+ PRIMARY KEY (id)
+)
+;
+
+CREATE INDEX fee_temp_header_idx2 ON fee_temp_header (name)
+;
+
+-- Table fund_flow
+
+CREATE TABLE fund_flow
+(
+  id Int NOT NULL AUTO_INCREMENT,
+  fee_temp_body_id Int,
+  flow_sequence Int,
+  flow_type Varchar(4),
+  charges Double,
+  charges_pct Double,
+  source_pay Varchar(1),
+  created_by Int NOT NULL,
+  created_on Datetime NOT NULL,
+  updated_by Int NOT NULL,
+  updated_on Datetime NOT NULL,
+ PRIMARY KEY (id)
+)
+;
+
+-- Table fund_flow_log
+
+CREATE TABLE fund_flow_log
+(
+  id Int NOT NULL AUTO_INCREMENT,
+  syslogno Varchar(14),
+  flow_seq Int,
+  flow_type Varchar(4),
+  acc_from Varchar(30),
+  acc_to Varchar(30),
+  amount Double,
+  charges Double,
+ PRIMARY KEY (id)
+)
+;
+
+-- Table fund_flow_template
+
+CREATE TABLE fund_flow_template
+(
+  id Int NOT NULL AUTO_INCREMENT,
+  name Varchar(10),
+  trx_code Varchar(20),
+  flow_sequence Int,
+  flow_type Varchar(4),
+  charges Double,
+  charges_pct Double,
+  source_pay Varchar(1),
+ PRIMARY KEY (id)
+)
+;
+
+-- Table user_activity
+
+CREATE TABLE user_activity
+(
+  id Int NOT NULL AUTO_INCREMENT,
+  user_data_id Int NOT NULL,
+  action Varchar(50),
+  module_name Varchar(50),
+  changed_attribute Longtext,
+  updated_on Datetime NOT NULL,
+  target_table Varchar(50),
+  target_id Int,
+ PRIMARY KEY (id)
+)
+;
+
+-- Table merchant
+
+CREATE TABLE merchant
+(
+  id Int NOT NULL AUTO_INCREMENT,
+  merchant_code Char(16) NOT NULL,
+  merchant_name Varchar(30),
+  alias Varchar(15),
+  account_type Varchar(8),
+  account_number Varchar(25),
+  currency Char(3),
+  timeout Int,
+  status Char(1),
+  auth_status Char(1),
+  created_on Datetime NOT NULL,
+  created_by Int NOT NULL,
+  auth_on Datetime,
+  auth_by Int,
+  updated_on Datetime NOT NULL,
+  updated_by Int NOT NULL,
+ PRIMARY KEY (id)
+)
+;
+
+CREATE UNIQUE INDEX merchant_idx1 ON merchant (merchant_code)
+;
+
+CREATE INDEX merchant_idx2 ON merchant (account_number)
+;
+
+-- Table mxkey
+
+CREATE TABLE mxkey
+(
+  k1pk Int NOT NULL AUTO_INCREMENT,
+  k1phon Varchar(30),
+  k1icc Varchar(30) NOT NULL,
+  k1key0 Varchar(32),
+  k1key1 Varchar(32),
+  k1key2 Varchar(32),
+  k1key3 Varchar(32),
+  k1key4 Varchar(32),
+  k1key5 Varchar(32),
+  k1key6 Varchar(32),
+  k1key7 Varchar(32),
+  k1key8 Varchar(32),
+  k1key9 Varchar(32),
+  k1key10 Varchar(32),
+  k1key11 Varchar(32),
+  k1key12 Varchar(32),
+  k1key13 Varchar(32),
+  k1key14 Varchar(32),
+  k1key15 Varchar(32),
+  k1key16 Varchar(32),
+  k1key17 Varchar(32),
+  k1key18 Varchar(32),
+  k1card Varchar(1),
+  k1file Varchar(12),
+  k1cnt Varchar(1),
+  k1flag Varchar(1),
+ PRIMARY KEY (k1pk)
+)
+;
+
+CREATE UNIQUE INDEX mxkey_idx1 ON mxkey (k1icc)
+;
+
+-- Table user_password_history
+
+CREATE TABLE user_password_history
+(
+  id Int NOT NULL AUTO_INCREMENT,
+  user_id Int NOT NULL,
+  sequence Int,
+  old_password1 Varchar(65),
+  old_password2 Varchar(65),
+  old_password3 Varchar(65),
+  old_password4 Varchar(65),
+  old_password5 Varchar(65),
+  old_password6 Varchar(65),
+ PRIMARY KEY (id)
+)
+;
+
+CREATE UNIQUE INDEX mxopsw_idx1 ON user_password_history (user_id)
+;
+
+-- Table user_data
+
+CREATE TABLE user_data
+(
+  id Int NOT NULL AUTO_INCREMENT,
+  user_code Varchar(20) NOT NULL,
+  password Varchar(65) NOT NULL,
+  user_name Varchar(100),
+  user_status Int,
+  invalid_count Int,
+  level_id Int,
+  last_login_on Datetime,
+  pass_changed_on Datetime,
+  need_change_pass Char(1),
+  branch_id Int,
+  created_by Int NOT NULL,
+  created_on Datetime NOT NULL,
+  updated_by Int NOT NULL,
+  updated_on Datetime NOT NULL,
+  session_id Varchar(64),
+  department Varchar(20),
+  auth_by Int,
+  auth_on Datetime,
+  auth_status Varchar(1),
+  email Varchar(100),
+ PRIMARY KEY (id)
+)
+;
+
+CREATE UNIQUE INDEX user_data_idx1 ON user_data (user_code)
+;
+
+-- Table user_menu
+
+CREATE TABLE user_menu
+(
+  menu_id Int NOT NULL,
+  parent_id Varchar(10),
+  menu_root_id Int,
+  menu_level Int NOT NULL,
+  show_order Int NOT NULL,
+  menu_leaf Int,
+  menu_description Varchar(500),
+  menu_url Varchar(100),
+  menu_group Varchar(40),
+  always_include Int NOT NULL
+)
+;
+
+ALTER TABLE user_menu ADD PRIMARY KEY (menu_id)
+;
+
+-- Table user_level
+
+CREATE TABLE user_level
+(
+  id Int NOT NULL AUTO_INCREMENT,
+  level_name Varchar(100) NOT NULL,
+  level_desc Varchar(250),
+  created_by Int NOT NULL,
+  created_on Datetime NOT NULL,
+  updated_by Int NOT NULL,
+  updated_on Datetime NOT NULL,
+ PRIMARY KEY (id)
+)
+;
+
+-- Table product
+
+CREATE TABLE product
+(
+  id Int NOT NULL AUTO_INCREMENT,
+  product_type Varchar(10),
+  product_code Varchar(15),
+  product_name Varchar(25),
+  created_on Datetime,
+  created_by Int,
+  updated_on Datetime,
+  updated_by Int,
+  institution_code Varchar(3),
+  status Varchar(1),
+ PRIMARY KEY (id)
+)
+;
+
+-- Table product_value
+
+CREATE TABLE product_value
+(
+  id Int NOT NULL AUTO_INCREMENT,
+  product_id Int,
+  product_value Int,
+  created_by Int NOT NULL,
+  created_on Datetime NOT NULL,
+  updated_by Int NOT NULL,
+  updated_on Datetime NOT NULL,
+ PRIMARY KEY (id)
+)
+;
+
+-- Table txkey
+
+CREATE TABLE txkey
+(
+  k1pk Int NOT NULL AUTO_INCREMENT,
+  k1phon Varchar(22),
+  k1icc Varchar(25) NOT NULL,
+  k1key0 Varchar(32),
+  k1key1 Varchar(32),
+  k1key2 Varchar(32),
+  k1key3 Varchar(32),
+  k1key4 Varchar(32),
+  k1key5 Varchar(32),
+  k1key6 Varchar(32),
+  k1key7 Varchar(32),
+  k1key8 Varchar(32),
+  k1key9 Varchar(32),
+  k1key10 Varchar(32),
+  k1key11 Varchar(32),
+  k1key12 Varchar(32),
+  k1key13 Varchar(32),
+  k1key14 Varchar(32),
+  k1key15 Varchar(32),
+  k1key16 Varchar(32),
+  k1key17 Varchar(32),
+  k1key18 Varchar(32),
+  k1card Varchar(1),
+  k1file Varchar(12),
+  k1cnt Varchar(1),
+  k1flag Varchar(1),
+ PRIMARY KEY (k1pk)
+)
+;
+
+CREATE UNIQUE INDEX txkey_idx1 ON txkey (k1icc)
+;
+
+-- Table bill_payment
+
+CREATE TABLE bill_payment
+(
+  id Int NOT NULL AUTO_INCREMENT,
+  biller_no Varchar(12) NOT NULL,
+  biller_name Varchar(60) NOT NULL,
+  biller_desc Varchar(60),
+  bank_ref1 Varchar(20),
+  bank_ref2 Varchar(20),
+  iso_type Varchar(20) NOT NULL,
+  bill_ref1 Varchar(20) NOT NULL,
+  bill_ref2 Varchar(20),
+  bill_ref3 Varchar(20),
+  category Varchar(30),
+  bill_acc_no_key Int NOT NULL,
+  bill_amount_key Int NOT NULL,
+  msg_code_suffix Varchar(3),
+  bp_account Varchar(30),
+  show_order Int,
+  status Varchar(1) NOT NULL,
+  created_on Datetime NOT NULL,
+  created_by Int NOT NULL,
+  updated_on Datetime NOT NULL,
+  updated_by Int NOT NULL,
+  bill_type1 Char(1) NOT NULL,
+  bill_min_length1 Char(2) NOT NULL,
+  bill_max_length1 Char(2) NOT NULL,
+  bill_type2 Char(1),
+  bill_min_length2 Char(2),
+  bill_max_length2 Char(2),
+  bill_type3 Char(1),
+  bill_min_length3 Char(2),
+  bill_max_length3 Char(2),
+ PRIMARY KEY (id)
+)
+;
+
+CREATE UNIQUE INDEX bp_org_idx1 ON bill_payment (biller_no)
+;
+
+-- Table lookup_data
+
+CREATE TABLE lookup_data
+(
+  lookup_cat Int NOT NULL,
+  lookup_cat_desc Varchar(255),
+  lookup_value Varchar(32) NOT NULL,
+  lookup_desc Varchar(255),
+  lookup_order Int NOT NULL DEFAULT 1,
+  created_by Int NOT NULL,
+  created_on Datetime NOT NULL,
+  updated_by Int NOT NULL,
+  updated_on Datetime NOT NULL
+)
+;
+
+ALTER TABLE lookup_data ADD PRIMARY KEY (lookup_cat,lookup_value)
+;
+
+-- Table system_setting
+
+CREATE TABLE system_setting
+(
+  id Int NOT NULL,
+  setting_name Varchar(64) NOT NULL,
+  setting_desc Varchar(200) NOT NULL,
+  setting_value Varchar(255) NOT NULL,
+  value_type Varchar(16) NOT NULL,
+  updated_by Int NOT NULL,
+  updated_on Datetime NOT NULL
+)
+;
+
+ALTER TABLE system_setting ADD PRIMARY KEY (id)
+;
+
+-- Table user_level_menu
+
+CREATE TABLE user_level_menu
+(
+  level_id Int,
+  menu_id Int
+)
+;
+
+-- Table access_group_detail
+
+CREATE TABLE access_group_detail
+(
+  access_id Int NOT NULL,
+  trx_code Varchar(30) NOT NULL
+)
+;
+
+ALTER TABLE access_group_detail ADD PRIMARY KEY (access_id,trx_code)
+;
+
+-- Table group_limit_header
+
+CREATE TABLE group_limit_header
+(
+  id Int NOT NULL AUTO_INCREMENT,
+  group_name Varchar(40) NOT NULL,
+  created_by Int NOT NULL,
+  created_on Datetime NOT NULL,
+  updated_by Int NOT NULL,
+  updated_on Datetime NOT NULL,
+ PRIMARY KEY (id)
+)
+;
+
+-- Table cif_limit
+
+CREATE TABLE cif_limit
+(
+  cif_id Int NOT NULL,
+  trx_code Varchar(40) NOT NULL,
+  trx_date Datetime NOT NULL,
+  total_amount Double NOT NULL,
+  total_freq Int NOT NULL,
+  account_no Varchar(50)
+)
+;
+
+ALTER TABLE cif_limit ADD PRIMARY KEY (cif_id,trx_code)
+;
+
+-- Table blast_balance
+
+CREATE TABLE blast_balance
+(
+  cif_id Int NOT NULL,
+  feature_email Int,
+  feature_sms Int,
+  balance Double,
+  operator_trx Varchar(25),
+  delivery_report Varchar(100),
+  process_time Datetime,
+  updated_by Int NOT NULL,
+  updated_on Datetime NOT NULL
+)
+;
+
+ALTER TABLE blast_balance ADD PRIMARY KEY (cif_id)
+;
+
+CREATE UNIQUE INDEX blast_balance_idx1 ON blast_balance (cif_id)
+;
+
+-- Table group_limit_detail
+
+CREATE TABLE group_limit_detail
+(
+  id Int NOT NULL AUTO_INCREMENT,
+  group_limit_id Int NOT NULL,
+  trx_code Varchar(40) NOT NULL,
+  limit_per_trx Double,
+  limit_per_day Double,
+  created_on Datetime NOT NULL,
+  created_by Int NOT NULL,
+  updated_on Datetime NOT NULL,
+  updated_by Int NOT NULL,
+  fee_trx Double,
+ PRIMARY KEY (id)
+)
+;
+
+-- Table trxlogd
+
+CREATE TABLE trxlogd
+(
+  msglogno Char(18) NOT NULL,
+  syslogno Char(16) NOT NULL,
+  app_in Varchar(16),
+  app_out Varchar(16),
+  cust_in Varchar(30),
+  cust_out Varchar(30),
+  client_ref Varchar(32),
+  state Int,
+  result_code Varchar(8),
+  message_in Varchar(255),
+  message_out Varchar(255),
+  received_time Datetime,
+  sent_time Datetime,
+  sent_status Varchar(8),
+  bti_ref_no Varchar(32),
+  bti_rev_rc Varchar(8),
+  xti_ref_no Varchar(32),
+  xti_rev_rc Varchar(8)
+)
+;
+
+ALTER TABLE trxlogd ADD PRIMARY KEY (msglogno)
+;
+
+-- Table trxlogh
+
+CREATE TABLE trxlogh
+(
+  syslogno Char(16) NOT NULL,
+  device_code Varchar(30) NOT NULL,
+  channel_id Varchar(15),
+  channel_type Varchar(30),
+  trx_code Varchar(32),
+  srac Varchar(32),
+  srac_name Varchar(40),
+  srac_type Varchar(8),
+  client_ref Varchar(32),
+  merchant_id Int,
+  merchant_name Varchar(30),
+  dsac Varchar(32),
+  dsac_name Varchar(40),
+  product_code Varchar(32),
+  trx_value Double,
+  charges Double,
+  bti_resp_data Varchar(2000),
+  notify_phone_no Varchar(30),
+  bank_code Varchar(8),
+  remarks Varchar(255),
+  received_time Datetime,
+  last_state Int,
+  last_rc Varchar(8),
+  sys_message Varchar(255),
+  has_fund_flow Int,
+  created_on Datetime,
+  updated_on Datetime,
+  biller_no Varchar(12),
+  biller_name Varchar(60),
+  bill_category Varchar(30),
+  client_acc_no Varchar(30),
+  product_name Varchar(32)
+)
+  COMMENT = 'channel type =  SMS, WEB, ATM, ANDROID, BB, IPHONE, MBIZ, GPRS
+client_ref = // first input (original request)
+bti_ref_no varchar(32) // last input (settle state)
+xti_ref_no varchar(32) // last input (settle state)
+sys_message varchar(255)  // system message
+has_fund_flow int  // 0: no fund flow, 1: has fund flow
+created_on datetime  // trx saved first time '
+;
+
+ALTER TABLE trxlogh ADD PRIMARY KEY (syslogno)
+;
+
+-- Table suggestion
+
+CREATE TABLE suggestion
+(
+  syslogno Char(14) NOT NULL,
+  device_code Varchar(30) NOT NULL,
+  message Varchar(255),
+  status Varchar(1),
+  action Varchar(255),
+  created_on Datetime NOT NULL,
+  created_by Int NOT NULL,
+  updated_on Datetime NOT NULL,
+  updated_by Int NOT NULL
+)
+;
+
+ALTER TABLE suggestion ADD PRIMARY KEY (syslogno)
+;
+
+-- Table public_holiday
+
+CREATE TABLE public_holiday
+(
+  id Int NOT NULL AUTO_INCREMENT,
+  holiday_date Datetime NOT NULL,
+  description Varchar(100),
+  created_by Varchar(15) NOT NULL,
+  created_on Datetime NOT NULL,
+  updated_by Varchar(15) NOT NULL,
+  updated_on Datetime NOT NULL,
+ PRIMARY KEY (id)
+)
+;
+
+CREATE UNIQUE INDEX holiday_idx1 ON public_holiday (holiday_date)
+;
+
+-- Table bill_presentment_data
+
+CREATE TABLE bill_presentment_data
+(
+  id Int NOT NULL AUTO_INCREMENT,
+  phone_no Varchar(20),
+  name Varchar(40),
+  trx_type Varchar(5) NOT NULL,
+  biller_id Int,
+  bill_acc_no Varchar(20) NOT NULL,
+  bank_id Int,
+  period_type Int,
+  period_value Int,
+  amount Double,
+  last_processed Datetime,
+  status Int,
+  auth_status Varchar(1),
+  channel_type Varchar(10) NOT NULL,
+  auth_by Varchar(20),
+  auth_on Datetime,
+  updated_by Varchar(20) NOT NULL,
+  updated_on Datetime NOT NULL,
+  created_by Varchar(20) NOT NULL,
+  created_on Datetime NOT NULL,
+ PRIMARY KEY (id)
+)
+;
+
+CREATE INDEX bp_reg_idx1 ON bill_presentment_data (phone_no)
+;
+
+CREATE INDEX bp_reg_idx2 ON bill_presentment_data (trx_type)
+;
+
+CREATE INDEX bp_reg_idx3 ON bill_presentment_data (biller_id)
+;
+
+CREATE INDEX bp_reg_idx4 ON bill_presentment_data (bill_acc_no)
+;
+
+-- Table mbiz_trz_failed_log
+
+CREATE TABLE mbiz_trz_failed_log
+(
+  syslogno Varchar(14),
+  srac Varchar(18),
+  dsac Varchar(18),
+  amount Double,
+  challenge_pin_staging Varchar(32),
+  result_code Varchar(8),
+  sys_message Varchar(255),
+  status_retry Int,
+  count_retry Int
+)
+;
+
+CREATE INDEX mbiz_trx_failed_idx1 ON mbiz_trz_failed_log (syslogno)
+;
+
+-- Table branch_data
+
+CREATE TABLE branch_data
+(
+  id Int NOT NULL AUTO_INCREMENT,
+  branch_code Varchar(50) NOT NULL,
+  branch_name Varchar(100),
+  branch_status Int,
+  created_by Int,
+  created_on Datetime,
+  updated_by Int,
+  updated_on Datetime,
+ PRIMARY KEY (id)
+)
+;
+
+-- Table user_data_history
+
+CREATE TABLE user_data_history
+(
+  id Int NOT NULL AUTO_INCREMENT,
+  user_data_id Int,
+  user_code Varchar(20) NOT NULL,
+  password Varchar(65) NOT NULL,
+  user_name Varchar(100),
+  user_status Int,
+  invalid_count Int,
+  level_id Int,
+  last_login_on Datetime,
+  pass_changed_on Datetime,
+  need_change_pass Char(1),
+  branch_id Int,
+  created_by Int NOT NULL,
+  created_on Datetime NOT NULL,
+  updated_by Int NOT NULL,
+  updated_on Datetime NOT NULL,
+  session_id Varchar(64),
+  department Varchar(20),
+  auth_by Int,
+  auth_on Datetime,
+  auth_status Varchar(2),
+  activity_type Varchar(20),
+  email Varchar(100),
+ PRIMARY KEY (id)
+)
+;
+
+-- Table user_preference
+
+CREATE TABLE user_preference
+(
+  user_id Int NOT NULL,
+  font_size Varchar(50),
+  font_family Varchar(100),
+  language Varchar(100),
+  theme Varchar(100)
+)
+;
+
+ALTER TABLE user_preference ADD PRIMARY KEY (user_id)
+;
+
+-- Table merchant_history
+
+CREATE TABLE merchant_history
+(
+  id Int NOT NULL AUTO_INCREMENT,
+  merchant_id Int,
+  merchant_code Char(16) NOT NULL,
+  merchant_name Varchar(30),
+  alias Varchar(15),
+  account_type Varchar(8),
+  account_number Varchar(25),
+  currency Char(3),
+  timeout Int,
+  status Char(1),
+  auth_status Char(1),
+  created_on Datetime NOT NULL,
+  created_by Int NOT NULL,
+  auth_on Datetime,
+  auth_by Int,
+  updated_on Datetime NOT NULL,
+  updated_by Int NOT NULL,
+  activity_type Varchar(20),
+ PRIMARY KEY (id)
+)
+;
+
+-- Table counter
+
+CREATE TABLE counter
+(
+  app_name Char(10) NOT NULL,
+  counter Int,
+  period Datetime
+)
+;
+
+ALTER TABLE counter ADD PRIMARY KEY (app_name)
+;
+
+-- Table card_ref
+
+CREATE TABLE card_ref
+(
+  id Int NOT NULL,
+  card_prefix Varchar(12) NOT NULL,
+  card_name Varchar(32) NOT NULL,
+  card_type Varchar(10) NOT NULL,
+  card_issuer Varchar(32) NOT NULL,
+  card_group Varchar(32) NOT NULL,
+  biller_no Varchar(12) NOT NULL,
+  created_by Int,
+  created_on Datetime,
+  updated_by Int,
+  updated_on Datetime
+)
+;
+
+ALTER TABLE card_ref ADD PRIMARY KEY (id)
+;
+
+-- Table cachevo_web
+
+CREATE TABLE cachevo_web
+(
+  id Varchar(25) NOT NULL,
+  expiration Datetime,
+  vo1 Varchar(4000),
+  vo2 Varchar(4000),
+  syslogno Varchar(20),
+  created_on Datetime
+)
+;
+
+ALTER TABLE cachevo_web ADD UNIQUE id (id)
+;
+
+-- Table cif_history
+
+CREATE TABLE cif_history
+(
+  id Int NOT NULL AUTO_INCREMENT,
+  cif_id Int NOT NULL,
+  parent_id Int,
+  device_code Varchar(30) NOT NULL,
+  access_id Int,
+  host_cif_id Varchar(20),
+  cif_name Varchar(40),
+  identity_code Varchar(100),
+  cif_lang Varchar(2),
+  cif_group Varchar(2),
+  pin Varchar(32),
+  pin_count Int DEFAULT 0,
+  hasstk Int,
+  activation_date Datetime,
+  pin_change_date Datetime,
+  status Varchar(1),
+  auth_status Varchar(1),
+  remarks Varchar(50),
+  created_on Datetime NOT NULL,
+  created_by Int NOT NULL,
+  auth_on Datetime,
+  auth_by Int,
+  updated_on Datetime NOT NULL,
+  updated_by Int NOT NULL,
+  email Varchar(30),
+  use_blast_sms Int,
+  branch_id Int,
+  activity_type Varchar(20),
+  channel Varchar(50),
+  address Varchar(250),
+  mother_name Varchar(200),
+  birth_date Datetime,
+  need_change_pin Char(1),
+ PRIMARY KEY (id)
+)
+;
+
+-- Table account_history
+
+CREATE TABLE account_history
+(
+  id Int NOT NULL AUTO_INCREMENT,
+  cif_id_history Int NOT NULL,
+  account_no Varchar(25) NOT NULL,
+  card_no Varchar(30),
+  account_type Varchar(2),
+  acc_index Int,
+  status Varchar(1),
+  modify_status Varchar(1),
+  remarks Varchar(1000),
+  created_on Datetime NOT NULL,
+  created_by Int NOT NULL,
+  updated_on Datetime NOT NULL,
+  updated_by Int NOT NULL,
+ PRIMARY KEY (id,cif_id_history)
+)
+;
+
+-- Table push_request_header
+
+CREATE TABLE push_request_header
+(
+  id Int NOT NULL AUTO_INCREMENT,
+  sent_time Datetime,
+  status Int,
+  subject Varchar(50),
+  message Varchar(160),
+  group_msisdn_id Int,
+  created_on Datetime NOT NULL,
+  created_by Int NOT NULL,
+  updated_on Datetime NOT NULL,
+  updated_by Int NOT NULL,
+ PRIMARY KEY (id),
+ INDEX idx_push_request_hdr_id (id)
+)
+;
+
+-- Table push_request_detail
+
+CREATE TABLE push_request_detail
+(
+  id Int NOT NULL AUTO_INCREMENT,
+  header_id Int NOT NULL,
+  status Int,
+  msisdn Varchar(25),
+  group_msisdn_id Int,
+ PRIMARY KEY (id,header_id),
+ INDEX idx_push_request_dtl_id (id)
+)
+;
+
+-- Table group_msisdn_header
+
+CREATE TABLE group_msisdn_header
+(
+  id Int NOT NULL AUTO_INCREMENT,
+  group_name Varchar(50),
+  group_remarks Varchar(500),
+  created_on Datetime NOT NULL,
+  created_by Int NOT NULL,
+  updated_on Datetime NOT NULL,
+  updated_by Int NOT NULL,
+ PRIMARY KEY (id),
+ INDEX idx_group_msisdn_hdr_id (id)
+)
+;
+
+-- Table group_msisdn_detail
+
+CREATE TABLE group_msisdn_detail
+(
+  msisdn Varchar(25) NOT NULL,
+  group_id Int NOT NULL
+)
+;
+
+ALTER TABLE group_msisdn_detail ADD PRIMARY KEY (group_id,msisdn)
+;
+
+-- Table init_data
+
+CREATE TABLE init_data
+(
+  init_app Char(5) NOT NULL,
+  init_index Int NOT NULL,
+  init_value Varchar(254)
+)
+;
+
+ALTER TABLE init_data ADD PRIMARY KEY (init_app,init_index)
+;
+
+ALTER TABLE init_data ADD UNIQUE id (init_app)
+;
+
+-- Table distributor
+
+CREATE TABLE distributor
+(
+  id Int NOT NULL AUTO_INCREMENT,
+  code Varchar(10) NOT NULL,
+  name Varchar(30),
+  account_no Varchar(25),
+  contact_id Int,
+  account_id Varchar(10),
+  access_code Varchar(10),
+  created_on Datetime NOT NULL,
+  created_by Varchar(15) NOT NULL,
+  updated_on Datetime NOT NULL,
+  updated_by Varchar(15) NOT NULL,
+  dist_type Int,
+ PRIMARY KEY (id)
+)
+;
+
+CREATE INDEX distributor_idx1 ON distributor (code)
+;
+
+-- Create relationships section ------------------------------------------------- 
+
+ALTER TABLE account ADD CONSTRAINT Relationship3 FOREIGN KEY (cif_id) REFERENCES cif (id) ON DELETE NO ACTION ON UPDATE NO ACTION
+;
+
+ALTER TABLE fee_temp_body ADD CONSTRAINT Relationship10 FOREIGN KEY (fee_temp_header_id) REFERENCES fee_temp_header (id) ON DELETE NO ACTION ON UPDATE NO ACTION
+;
+
+ALTER TABLE product_value ADD CONSTRAINT Relationship14 FOREIGN KEY (product_id) REFERENCES product (id) ON DELETE NO ACTION ON UPDATE NO ACTION
+;
+
+ALTER TABLE access_group_detail ADD CONSTRAINT Relationship15 FOREIGN KEY (access_id) REFERENCES access_group_header (id) ON DELETE NO ACTION ON UPDATE NO ACTION
+;
+
+ALTER TABLE account_history ADD CONSTRAINT Relationship16 FOREIGN KEY (cif_id_history) REFERENCES cif_history (id) ON DELETE NO ACTION ON UPDATE NO ACTION
+;
+
+ALTER TABLE push_request_detail ADD CONSTRAINT Relationship17 FOREIGN KEY (header_id) REFERENCES push_request_header (id) ON DELETE NO ACTION ON UPDATE NO ACTION
+;
+
+ALTER TABLE group_msisdn_detail ADD CONSTRAINT Relationship18 FOREIGN KEY (group_id) REFERENCES group_msisdn_header (id) ON DELETE NO ACTION ON UPDATE NO ACTION
+;
+
+
+
+/* Populate data */
+
+/* user menu */
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(1, 1, 1, 1, 1, 0,'Security', '', 'Security', 0); 
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(101, 1, 1, 2, 1, 1, 'User Level', 'UserLevel', 'Security', 0); 
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(102, 1, 1, 2, 2, 1,'User Data', 'UserData', 'Security', 0); 
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(103, 1, 1, 2, 3, 1, 'Change Password', 'ChangePassword', 'Security', 1);  
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(104, 1, 1, 2, 4, 1,'Reset Password', 'ResetPassword', 'Security', 0); 
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(105, 1, 1, 2, 5, 1,'User Preferences', 'UserPreference', 'Security', 0); 
+
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(2, 2, 2, 1, 2, 0, 'Customer Support', '', 'Customer Support', 0); 
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(201, 2, 2, 2, 1, 1, 'Product', 'Product', 'Customer Support', 0); 
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(202, 2, 2, 2, 2, 1, 'Customer Info', 'CIF', 'Customer Support', 0); 
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(203, 2, 2, 2, 3, 1, 'Merchant', 'Merchant', 'Customer Support', 0); 
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(204, 2, 2, 2, 4, 1, 'Reset Pin', 'ResetPin', 'Customer Support', 0);    
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(205, 2, 2, 2, 5, 1, 'Transaction Log Browser', 'TrxLogBrowser', 'Customer Support', 0); 
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(206, 2, 2, 2, 6, 1, 'Print Struk PLN', 'PrinStrukPln', 'Customer Support', 0);
+
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(3, 3, 3, 1, 3, 0, 'Marketing Support', '', 'Marketing Support', 0); 
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(301, 3, 3, 2, 1, 1, 'Group Phone No', 'GroupMsisdn', 'Marketing Support', 0);
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(302, 3, 3, 2, 2, 1, 'Send Sms', 'SendSms', 'Marketing Support', 0);
+
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(4, 4, 4, 1, 4, 0, 'Supervisor', '', 'Supervisor', 0); 
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(401, 4, 4, 2, 1, 1, 'Authorize CIF', 'AuthCif', 'Supervisor', 0);
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(402, 4, 4, 2, 2, 1, 'Authorize Merchant', 'AuthMerchant', 'Supervisor', 0);
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(403, 4, 4, 2, 3, 1, 'Authorize User Data', 'AuthUserData', 'Supervisor', 0);
+
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(5, 5, 5, 1, 5, 0, 'Setting', '', 'Setting', 0); 
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(501, 5, 5, 2, 1, 1, 'System Setting', 'SystemSetting', 'Setting', 0);
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(502, 5, 5, 2, 2, 1, 'Tariff', 'Tariff', 'Setting', 0);
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(503, 5, 5, 2, 3, 1, 'Access Group', 'AccessGroup', 'Setting', 0);
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(504, 5, 5, 2, 4, 1, 'Bill Payment', 'BillPayment', 'Setting', 0);
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(505, 5, 5, 2, 5, 1, 'Bank', 'Bank', 'Setting', 0);
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(506, 5, 5, 2, 6, 1, 'Branch Data', 'BranchData', 'Setting', 0);
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(507, 5, 5, 2, 7, 1, 'Group Limit', 'GroupLimit', 'Setting', 0);
+
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(6, 6, 6, 1, 6, 0, 'Report', '', 'Report', 0); 
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(601, 6, 6, 2, 1, 1, 'Customer Info', 'CifReport', 'Report', 0);
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(602, 6, 6, 2, 2, 1, 'Merchant', 'MerchantReport', 'Report', 0);
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(603, 6, 6, 2, 3, 1, 'Transaction', '', 'Report', 0);
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(604, 603, 6, 2, 1, 1, 'Airtime Refill', 'AirtimeRefillReport', 'Report', 0);
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(605, 603, 6, 2, 2, 1, 'MATM Purchase', 'MatmPurchaseReport', 'Report', 0);
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(606, 603, 6, 2, 3, 1, 'Fund Transfer', 'FundTransferReport', 'Report', 0);
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(607, 603, 6, 2, 4, 1, 'Bill Payment', 'BillPaymentReport', 'Report', 0);
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(608, 6, 6, 2, 4, 1, 'User Activity', 'UserActivityReport', 'Report', 0);
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(609, 6, 6, 2, 5, 1, 'Terminated Customer Info', 'TerminatedCifReport', 'Report', 0);
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(610, 6, 6, 2, 6, 1, 'Blast SMS', 'BlastSmsReport', 'Report', 0);
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(611, 6, 6, 2, 7, 1, 'Audit Trail Account', 'AuditTrailAccount', 'Report', 0);
+insert into user_menu(MENU_ID, PARENT_ID, MENU_ROOT_ID, MENU_LEVEL, SHOW_ORDER, MENU_LEAF, MENU_DESCRIPTION, MENU_URL, MENU_GROUP, ALWAYS_INCLUDE)
+values(612, 6, 6, 2, 8, 1, 'Summary Transaction', 'SummaryTransaction', 'Report', 0);
+
+
+/* user level */
+insert into user_level(LEVEL_NAME, LEVEL_DESC, CREATED_BY, CREATED_ON, UPDATED_BY, UPDATED_ON)
+values('ROOT','ROOT LEVEL', 1, current_timestamp, 1, current_timestamp);
+
+/* user preference */
+Insert Into user_preference(User_Id, Font_Size, Font_Family, Language, Theme)
+values(1, 'Medium',  'Utsaah Regular', 'English', 'Persian Blue');
+Insert Into user_preference(User_Id, Font_Size, Font_Family, Language, Theme)
+values(2, 'Medium',  'Utsaah Regular', 'English', 'Persian Blue');
+
+/* Group Limit */
+insert into group_limit_header(GROUP_NAME, CREATED_BY, CREATED_ON, UPDATED_BY, UPDATED_ON)
+values('Gold', 1, current_timestamp, 1, current_timestamp);
+
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,1);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,101);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,102);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,103);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,104);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,105);
+/*
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,2);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,201);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,202);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,203);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,204);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,205);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,206);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,3);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,301);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,302);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,4);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,401);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,402);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,403);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,5);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,501);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,502);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,503);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,504);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,505);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,506);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,507);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,6);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,601);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,602);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,603);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,604);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,605);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,606);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,607);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,608);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,609);
+insert into user_level_menu(LEVEL_ID, MENU_ID) values(1,610);
+*/
+
+/*
+user:ROOT
+pass:embadmin
+*/
+INSERT INTO user_data(user_code, password, user_name, user_status, invalid_count, level_id, last_login_on, pass_changed_on, branch_id, created_by, created_on, updated_by, updated_on, session_id, department, auth_by, auth_on, auth_status)
+VALUES ('ROOT', '363954B0B33B212FC4F0E599B99861F7294052932C9B0633C2C3288F5577C88B', 'SUPER USER', 1, 0, 1, NULL, NULL, 1, 1, current_timestamp, 1, current_timestamp, '', 'ITD', 1, current_timestamp, 'A');      
+INSERT INTO user_data(user_code, password, user_name, user_status, invalid_count, level_id, last_login_on, pass_changed_on, branch_id, created_by, created_on, updated_by, updated_on, session_id, department, auth_by, auth_on, auth_status)
+VALUES ('ADMIN', 'CF5C94C48C2344718850746727AF372B5E1DFA316CDAD1504F7F4646ADF82546', 'SUPER USER', 1, 0, 1, NULL, NULL, 1, 1, current_timestamp, 1, current_timestamp, '', 'ITD', 1, current_timestamp, 'A');      
+  
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(1, 'PASSWORD MIN LENGTH', 'Define required minimum character when creating password', '6', 'INT', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(2, 'MAX INVALID LOGIN', 'Define how many times invalid login is allowed before user id is blocked', '3', 'INT', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(3, 'MAX WRONG PIN', 'Define how many times wrong pin allowed', '3', 'INT', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(4, 'MAX LAST UPDATED', 'Define how many data last updated showed', '5', 'INT', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(5, 'MAX PASSWORD EXPIRED', 'Define how many days password can expired', '90', 'INT', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(6, 'CHECK OLD PASSWORD', 'Define how many old password will be checked', '6', 'INT', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(7, 'CHECK LENGTH PIN', 'Define total length PIN', '6', 'INT', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(8, 'CHECK LENGTH CARDNO', 'Define length card no', '16', 'INT', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(9, 'CHALLENGE PIN LENGTH', 'Define length of challenge pin', '2', 'INT', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(10, 'AUTHORIZE LIST DATA', 'Define authorize list data per page', '10', 'INT', 1, current_timestamp);
+Insert Into system_setting(Id, Setting_Name, Setting_Desc, Setting_Value, Value_Type, Updated_By, Updated_On)
+values(11, 'ALLOWED IP', 'Allowed IP to Access MMBS System, multiple IP separated by comma (,)', '127.0.0.1', 'STRING', 1, current_timestamp);
+Insert Into system_setting(Id, Setting_Name, Setting_Desc, Setting_Value, Value_Type, Updated_By, Updated_On)
+values(12, 'SMI HTTP USERNAME', 'Username for SMI HTTP Credential', 'emoussdmdr', 'STRING', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+Values(13, 'SMI HTTP PASSWORD', 'Password for SMI HTTP Credential', 'eMobile02', 'STRING', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(14, 'CACHE TIMEOUT SMS', 'Cache timeout for SMS transaction in ms', '300000', 'INT', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(15, 'CACHE TIMEOUT USSD', 'Cache timeout for USSD transaction in ms', '10000', 'INT', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(16, 'CACHE TIMEOUT GPRS', 'Cache timeout for GPRS transaction in ms', '30000', 'INT', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(17, 'CACHE TIMEOUT WEB', 'Cache timeout for WEB transaction in days', '3', 'INT', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+Values(19, 'PIN LENGTH', 'Length of pin user', '6', 'INT', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+Values(20, 'TRANSACTION TIMEOUT', 'Transaction timeout in ms', '10000', 'INT', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+Values(21, 'BTI TIMEOUT', 'BTI timeout in ms', '5000', 'INT', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+Values(22, 'EMAIL FOR WARNING', 'Email destination when system has warning/error, multiple separated by comma (,)', 'test1@emobile.com.sg,test2@emobile.com.sg', 'STRING', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(23, 'PROCESS TIME THRESHOLD', 'If transaction exceeds process time threshold (in ms), system will notify', '8000', 'INT', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(24, 'TPDA', 'SMS Banking TPDA number', '6133', 'STRING', 1, current_timestamp);
+Insert Into system_setting(Id, Setting_Name, Setting_Desc, Setting_Value, Value_Type, Updated_By, Updated_On)
+values(25, 'CALL CENTRE PHONE NO', 'Call Centre phone number', 'Call Centre 14xxx atau 021-xxxxxx', 'STRING', 1, current_timestamp);
+Insert Into system_setting(Id, Setting_Name, Setting_Desc, Setting_Value, Value_Type, Updated_By, Updated_On)
+values(26, 'MINIMUM BANK CODE LENGTH', 'Set minimum length for bank code', '3', 'INT', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(27, 'BANK NAME', 'SMS Banking bank name', 'Bank Sumut', 'STRING', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(28, 'ACCOUNT_LENGTH', 'Define account length', '16', 'INT', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(51, 'COUNTRY CODE', 'Define country code that is used by the system', '62', 'STRING', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(52, 'DEFAULT CURRENCY HOST', 'Define default currency code that is used by HOST', '360', 'STRING', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(53, 'CACHE TIMEOUT', 'Define how long timeout for (inquiry) transaction that is cached (ms)', '600000', 'INT', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(54, 'RETRY_CHALLENGE_PIN', 'Define how many retry challenge pin', '2', 'INT', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(55, 'RESULT_CODE_TERMINATE_CIF', 'Define result code used to terminate cif', '11', 'STRING', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(56, 'MINIMUM_TRANSFER', 'Define Minimum Transfer', '10000', 'DOUBLE', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(57, 'DEFAULT_TIME_BLAST_SMS', 'Define Default Time for Blast SMS', '6:00:00', 'STRING', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(58, 'MINIMUM_BALANCE_FOR_BLAST', 'Define Minimum Balance for Blast SMS', '1000000', 'DOUBLE', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(59, 'DEFAULT_CIF_GROUP_FOR_REGIS_ATM', 'Define Setting CIF group for registration via ATM', '1', 'INT', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(60, 'DEFAULT_ACCESS_GROUP_FOR_REGIS_ATM', 'Define Setting access group for registration via ATM', '0000000000', 'STRING', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(61, 'DEFAULT_ACC_TYPE_FOR_REGIS_ATM', 'Define Setting account type (saving) for registration via ATM', '10', 'STRING', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(62, 'DEFAULT_BRANCH_CODE_FOR_REGIS_ATM', 'Define Setting branch code for registration via ATM', '888', 'STRING', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(63, 'EMAIL_TO', 'Define Email to', 'abc@emobile.com.sg', 'STRING', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(64, 'EMAIL_SUBJECT', 'Define Email to', 'testing', 'STRING', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(65, 'PATH_BP_REG_FAILED', 'Define path file generate', 'D:\\BP_REG_FAILED.csv', 'STRING', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(66, 'AUTHORIZE_TARIFF', 'Define Setting for Authorize Tariff', '0', 'INT', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(70, 'USER_PASSWORD_MODE', 'Define user web password to be randomized by system or to be input manually', '0', 'INT', 1, current_timestamp);
+insert into system_setting(id, setting_name, setting_desc, setting_value, value_type, updated_by, updated_on)
+values(71, 'AUTHORIZE_CIF', 'Define whether supervisor have to login right after cif saved', '0', 'INT', 1, current_timestamp);
+
+
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(1, '1', 'User Status', 'Active', 1, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(1, '2', 'User Status', 'Not Active', 2, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(1, '3', 'User Status', 'Suspended', 3, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(2, '1', 'Department', 'Kantor Pusat', 1, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(2, '2', 'Department', 'IT Department', 2, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(2, '3', 'Department', 'Bussiness Department', 3, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(2, '4', 'Department', 'Branch', 4, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(3, '1', 'Limit Type', 'Per Trx', 1, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(3, '2', 'Limit Type', 'Daily', 2, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(4, '360', 'Currency Code', 'IDR', 1, 1, current_timestamp, 1, current_timestamp); 
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(4, '017', 'Currency Code', 'AUD', 2, 1, current_timestamp, 1, current_timestamp); 
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(4, '021', 'Currency Code', 'CAD', 3, 1, current_timestamp, 1, current_timestamp); 
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(4, '024', 'Currency Code', 'GBP', 4, 1, current_timestamp, 1, current_timestamp); 
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(4, '025', 'Currency Code', 'HKD', 5, 1, current_timestamp, 1, current_timestamp); 
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(4, '029', 'Currency Code', 'JPY', 6, 1, current_timestamp, 1, current_timestamp); 
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(4, '032', 'Currency Code', 'NZD', 7, 1, current_timestamp, 1, current_timestamp); 
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(4, '034', 'Currency Code', 'SGD', 8, 1, current_timestamp, 1, current_timestamp); 
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(4, '039', 'Currency Code', 'USD', 9, 1, current_timestamp, 1, current_timestamp); 
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(4, '040', 'Currency Code', 'DEM', 10, 1, current_timestamp, 1, current_timestamp); 
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(4, '047', 'Currency Code', 'EUR', 11, 1, current_timestamp, 1, current_timestamp); 
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(5, '10', 'Account Type Display', 'Tabungan', 1, 1, current_timestamp, 1, current_timestamp); 
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(5, '20', 'Account Type Display', 'Giro', 2, 1, current_timestamp, 1, current_timestamp); 
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(5, '30', 'Account Type Display', 'Kartu Kredit', 3, 1, current_timestamp, 1, current_timestamp); 
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(6, '1', 'Cif Group', 'Paket Silver', 1, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(6, '2', 'Cif Group', 'Paket Gold', 2, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(6, '3', 'Cif Group', 'Paket Platinum', 3, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(7, 'S', 'Account Type', '10', 1, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(7, 'G', 'Account Type', '20', 2, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(7, 'D', 'Account Type', '30', 2, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(8, 'A', 'Status', 'Active', 1, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(8, 'T', 'Status', 'Terminate', 2, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(8, 'B', 'Status', 'Block', 3, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(8, 'R', 'Status', 'Removed', 4, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(9, 'A', 'Auth Status', 'Approve', 1, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(9, 'N', 'Auth Status', 'No Need Authorize', 2, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(9, 'R', 'Auth Status', 'Reject', 3, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(9, 'Y', 'Auth Status', 'Pending', 4, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(10, 'ATM Bersama', 'Switching', 'ATM Bersama', 1, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(10, 'Prima', 'Switching', 'Prima', 2, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(10, 'Alto', 'Switching', 'Alto', 3, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(11, 'AIR_TIME', 'Product Type', 'Air Time', 1, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(12, 'FUND_TRF', 'Limit Transaction', 'Fund Transfer', 1, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(12, 'FUND_TRF_OTH', 'Limit Transaction', 'Fund Transfer Other', 2, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(12, 'BILL_PMT', 'Limit Transaction', 'Bill Payment', 3, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(12, 'PMT_SIM', 'Limit Transaction', 'Purchase', 4, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(13, 'VER_PLAIN', 'Transaction Type', 'Verification Plain', 1, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(13, 'WEB_REG', 'Transaction Type', 'Web Registration', 2, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(13, 'WEB_VER', 'Transaction Type', 'Web Verification', 3, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(13, 'CHG_PIN', 'Transaction Type', 'Change Pin', 4, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(13, 'ACC_BAL', 'Transaction Type', 'Account Balance', 5, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(13, 'ACC_STAT', 'Transaction Type', 'Account Statement', 6, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(13, 'FUND_TRF', 'Transaction Type', 'Fund Transfer', 7, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(13, 'BILL_PMT', 'Transaction Type', 'Bill Payment', 8, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(13, 'PMT_SIM', 'Transaction Type', 'Airtime Refill', 9, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(13, 'INFO_KURS', 'Transaction Type', 'Informasi nilai tukar valuta asing', 10, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(13, 'INFO_SAV', 'Transaction Type', 'Informasi suku bunga tabungan', 11, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(13, 'INFO_DEP', 'Transaction Type', 'Informasi suku bunga deposito', 12, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(14, '0', 'Transaction Status', 'Succes', 1, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(14, '1', 'Transaction Status', 'Failed', 2, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(15, 'S', 'Customer Service Status', 'Solve', 1, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(15, 'Y', 'Customer Service Status', 'Pending', 2, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(16, '0', 'User Activity', 'Never Login', 1, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(16, '1', 'User Activity', 'Last Login', 2, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(17, 'ATM', 'Channel Type', 'ATM', 1, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(17, 'SMS', 'Channel Type', 'SMS', 2, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(17, 'TCP', 'Channel Type', 'TCP', 3, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(17, 'SCHEDULER', 'Channel Type', 'SCHEDULER', 4, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(17, 'WEB', 'Channel Type', 'WEB', 5, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(17, 'USSD', 'Channel Type', 'USSD', 6, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(17, 'BB', 'Channel Type', 'BB', 7, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(17, 'ANDROID', 'Channel Type', 'ANDROID', 8, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(17, 'IPHONE', 'Channel Type', 'IPHONE', 9, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(18, 'BAL_INQ', 'Transaction Code', 'Check Balance', 1, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(18, 'ACC_STMT', 'Transaction Code',  'Mutation', 2, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(19, '0', 'Pin Status', 'Active', 1, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(19, '1', 'Pin Status', 'Change PIN', 2, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(19, '2', 'Pin Status', 'Reset PIN', 3, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(20, '1', 'Time Type', 'Daily', 1, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(20, '2', 'Time Type', 'Weekly', 2, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(20, '3', 'Time Type', 'Monthly', 3, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(21, '1', 'Day', 'Sunday', 1, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(21, '2', 'Day', 'Monday', 2, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(21, '3', 'Day', 'Tuesday', 3, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(21, '4', 'Day', 'Wednesday', 4, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(21, '5', 'Day', 'Thursday', 5, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(21, '6', 'Day', 'Friday', 6, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(21, '7', 'Day', 'Saturday', 7, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(22, 'BP', 'Trx Code Bill Presentment', 'Bill Payment', 1, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(22, 'VC', 'Trx Code Bill Presentment', 'Airtime', 2, 1, current_timestamp, 1, current_timestamp);
+insert into lookup_data(lookup_cat, lookup_value, lookup_cat_desc, lookup_desc, lookup_order, created_by, created_on, updated_by, updated_on)
+values(22, 'FT', 'Trx Code Bill Presentment', 'Fund Transfer', 3, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+values(23, 'INQPhone', 'Iso Type', 'Inquiry Phone', 1, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+values(23, 'INQPayment', 'Iso Type', 'Inquiry Payment', 1, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+values(23, 'Inqubp', 'Iso Type', 'Inquiry Unified Bill Payment', 1, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+values(23, 'SETPayment', 'Iso Type', 'Settlement Payment', 1, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+Values(24, 'Telepon/HP', 'Bill Payment Category', 'Telepon/HP', 1, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+Values(24, 'Listrik', 'Bill Payment Category', 'Listrik', 2, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+Values(24, 'Kartu Kredit', 'Bill Payment Category', 'Kartu Kredit', 3, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+Values(24, 'Tv Kabel', 'Bill Payment Category', 'Tv Kabel', 4, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+Values(24, 'Angsuran', 'Bill Payment Category', 'Angsuran', 5, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+Values(24, 'Internet', 'Bill Payment Category', 'Internet', 6, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+Values(24, 'Asuransi', 'Bill Payment Category', 'Asuransi', 7, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+Values(24, 'Pajak', 'Bill Payment Category', 'Pajak', 8, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+Values(24, 'PAM', 'Bill Payment Category', 'PAM', 9, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+Values(24, 'Pendidikan', 'Bill Payment Category', 'Pendidikan', 10, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+Values(24, 'Lainnya', 'Bill Payment Category', 'Lainnya', 11, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+values(25, 'ACC_BAL', 'Service Type', 'Account Balance', 1, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+values(25, 'ACC_STAT', 'Service Type', 'Account Statement', 2, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+values(25, 'BILL_PMT', 'Service Type', 'Bill Payment', 3, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+values(25, 'CHG_PIN', 'Service Type',  'Change Pin', 4, 1, current_timestamp, 1, current_timestamp); 
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+values(25, 'FUND_TRF', 'Service Type', 'Fund Transfer', 5, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+values(25, 'INFO_DEP', 'Service Type', 'Rate Inquiry - Deposit', 6, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+values(25, 'INFO_KURS', 'Service Type', 'Rate Inquiry - Currency', 7, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+values(25, 'INFO_SAV', 'Service Type', 'Rate Inquiry - Savings', 8, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+values(25, 'PMT_SIM', 'Service Type', 'Airtime Refill', 9, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+values(25, 'MA_PUR_ATM', 'Service Type', 'MATM Purchase', 10, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+values(26, '1', 'Bill Type', 'Numeric', 1, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+values(26, '2', 'Bill Type', 'Alpha Numeric', 2, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+values(27, '0', 'Blast Status', 'Pending', 1, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+values(27, '1', 'Blast Status', 'On Progress', 2, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+values(27, '2', 'Blast Status', 'Success', 3, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+values(27, '3', 'Blast Status', 'Fail', 4, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+values(28, 'SMI-PLAIN', 'CHANNEL APP', 'SMS', 1, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+values(28, 'SMI-USSD', 'CHANNEL APP', 'USSD', 2, 1, current_timestamp, 1, current_timestamp);
+/*Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+values(28, 'SMI-WEB', 'CHANNEL APP', 'WEB', 3, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+values(28, 'GPRS', 'CHANNEL APP', 'GPRS', 4, 1, current_timestamp, 1, current_timestamp);
+*/
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+values(29, 'ISAT', 'OPERATOR CODE', 'INDOSAT', 1, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+values(29, 'TSEL', 'OPERATOR CODE', 'TELKOMSEL', 2, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+values(29, 'XL', 'OPERATOR CODE', 'XL', 3, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+values(29, 'THREE', 'OPERATOR CODE', 'THREE', 4, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+values(29, 'SMARTFREN', 'OPERATOR CODE', 'SMARTFREN', 5, 1, current_timestamp, 1, current_timestamp);
+Insert Into lookup_data(Lookup_Cat, Lookup_Value, Lookup_Cat_Desc, Lookup_Desc, Lookup_Order, Created_By, Created_On, Updated_By, Updated_On)
+values(29, 'ESIA', 'OPERATOR CODE', 'ESIA', 6, 1, current_timestamp, 1, current_timestamp);
+
+
+/* ACCESS_GROUP_HEADER */
+INSERT INTO access_group_header
+ ( access_name, access_status, remark, created_by, created_on, updated_by, updated_on)
+VALUES('FINANCIAL','A', ' ', 1, current_timestamp, 1, current_timestamp);
+INSERT INTO access_group_header
+ ( access_name, access_status, remark, created_by, created_on, updated_by, updated_on)
+VALUES('NON FINANCIAL','A', ' ', 1, current_timestamp, 1, current_timestamp);
+
+
+/* ACCESS_GROUP_DETAIL */
+INSERT INTO access_group_detail( trx_code, access_id)
+ values( 'ACC_BAL', 2);   
+INSERT INTO access_group_detail( trx_code, access_id)
+ values( 'ACC_STAT', 2);
+INSERT INTO access_group_detail( trx_code, access_id)
+ values('CHG_PIN', 2);
+INSERT INTO access_group_detail( trx_code, access_id)
+ values('INFO_DEP', 2);
+INSERT INTO access_group_detail( trx_code, access_id)
+ values('INFO_KURS', 2);
+INSERT INTO access_group_detail( trx_code, access_id)
+ values('INFO_SAV', 2);
+INSERT INTO access_group_detail( trx_code, access_id)
+ values('PMT_SIM', 2);
+ 
+INSERT INTO access_group_detail( trx_code, access_id)
+ values('ACC_BAL', 1);
+INSERT INTO access_group_detail( trx_code, access_id)
+ values('ACC_STAT', 1);
+INSERT INTO access_group_detail( trx_code, access_id)
+ values('BILL_PMT', 1);
+INSERT INTO access_group_detail( trx_code, access_id)
+ values( 'CHG_PIN', 1);   
+INSERT INTO access_group_detail( trx_code, access_id)
+ values( 'FUND_TRF', 1);
+INSERT INTO access_group_detail( trx_code, access_id)
+ values( 'FUND_TRF_OTH', 1);
+INSERT INTO access_group_detail( trx_code, access_id)
+ values( 'INFO_DEP', 1);
+INSERT INTO access_group_detail( trx_code, access_id)
+ values( 'INFO_KURS', 1);
+INSERT INTO access_group_detail( trx_code, access_id)
+ values( 'INFO_SAV', 1);
+INSERT INTO access_group_detail( trx_code, access_id)
+ values( 'MA_PUR_ATM', 1);
+INSERT INTO access_group_detail( trx_code, access_id)
+ values( 'PMT_SIM', 1);
+   
+/* branch */
+INSERT INTO branch_data(branch_code, branch_name, created_by, created_on, updated_by, updated_on)
+VALUES ('888', 'Jakarta', 1, current_timestamp, 1, current_timestamp);
+
+INSERT INTO init_data(init_app, init_index, init_value)
+VALUES ('__CIF', 1, 'DC538742096FF9B6E23248B90C4B5CF994979321E5A2FF8D');
+
+Create view view_activity_action As
+Select Distinct action
+FROM user_activity;
+
+Create view view_activity_module_name As
+Select Distinct module_Name
+FROM user_activity;
+
+Create view view_activity_target_table As
+Select Distinct target_table
+From user_activity;
+
+Create view view_activity_user As
+Select Distinct ua.user_data_id, ud.user_code, ud.user_name
+From user_activity ua
+  inner join user_data ud on ua.user_data_id = ud.id;
+  
+ALTER TABLE trxlogh
+add operator_code varchar(10);
