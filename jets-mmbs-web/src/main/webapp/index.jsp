@@ -1,2 +1,2 @@
 
-<% response.sendRedirect("Login.web"); %>
+<% response.sendRedirect("MainMenu.web"); %>

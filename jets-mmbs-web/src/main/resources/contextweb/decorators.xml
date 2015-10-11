@@ -18,5 +18,6 @@
     <decorator name="home-standard" page="decorator-home-standard.jsp" />
     <decorator name="general-standard" page="decorator-general-standard.jsp" />
     <decorator name="general-jmesa" page="decorator-general-jmesa.jsp" />
+    <decorator name="home-gudang-coding" page="decorator-front-end.jsp" />
     
 </decorators>

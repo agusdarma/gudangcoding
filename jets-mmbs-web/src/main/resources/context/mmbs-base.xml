@@ -11,20 +11,22 @@
     	</result-types>
     	
 		<interceptors>
-			<interceptor name="securityCheck"
+			<!--  <interceptor name="securityCheck"
 				class="com.emobile.mmbs.web.interceptor.SecurityInterceptor" />
 			<interceptor name="jmesaPaging" 
 				class="com.emobile.mmbs.web.interceptor.JMesaPagingInterceptor" />
+			-->
 			
 			<interceptor-stack name="webStack">
 				<interceptor-ref name="basicStack" />
 			</interceptor-stack>
 
 			<interceptor-stack name="webSecureStack">
-				<interceptor-ref name="securityCheck" />
+				<!--  <interceptor-ref name="securityCheck" />
 				<interceptor-ref name="fileUpload" />
                 <interceptor-ref name="i18nStack" />
                 <interceptor-ref name="jmesaPaging" />
+                -->
 			</interceptor-stack>
 		</interceptors>
 
