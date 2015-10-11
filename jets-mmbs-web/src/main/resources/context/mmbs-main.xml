@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+   
+<struts>
+
+	<package name="mmbs-main" extends="mmbs-base">           		
+	
+		<action name="Login!*" method="{1}" class="com.emobile.mmbs.web.action.LoginAction">
+            <interceptor-ref name="webStack" />
+            <result name="success" type="redirectAction">MainMenu</result>
+            <result name="input">/WEB-INF/pages/login.jsp</result>
+            <result name="core">/WEB-INF/pages/core.jsp</result>
+            <result name="spvLogin" type="stream">
+				<param name="contentType">text/plain</param>
+				<param name="inputName">wrv</param>
+			</result>
+        </action>
+        
+        <action name="Logout" method="logoff" class="com.emobile.mmbs.web.action.LoginAction">
+            <interceptor-ref name="webStack" />
+            <result name="success">/WEB-INF/pages/login.jsp</result>
+        </action>
+        
+        <action name="Contact" method="goToContact" class="com.emobile.mmbs.web.action.LoginAction">
+            <interceptor-ref name="webStack" />
+            <result name="success">/WEB-INF/pages/contact.jsp</result>
+        </action>
+        
+        <action name="MainMenu" method="mainMenu" class="com.emobile.mmbs.web.action.LoginAction">
+           <interceptor-ref name="webSecureStack" />
+            <result name="success">/WEB-INF/pages/main_menu.jsp</result>
+        </action>
+        
+        <action name="InvalidModule" method="invalidModule" class="com.emobile.mmbs.web.action.LoginAction">
+           <interceptor-ref name="webSecureStack" />
+            <result name="success">/WEB-INF/pages/main_menu.jsp</result>
+        </action>
+        
+	</package>
+	
+</struts>
