@@ -30,7 +30,7 @@
         
         <action name="MainMenu" method="mainMenu" class="com.jakarta.software.web.action.LoginAction">
            <interceptor-ref name="webSecureStack" />
-            <result name="success">/WEB-INF/pages/gudangcoding/main_menu.jsp</result>
+            <result name="success">/WEB-INF/pages/jakartasoftware/main_menu.jsp</result>
         </action>
         
         <action name="InvalidModule" method="invalidModule" class="com.jakarta.software.web.action.LoginAction">

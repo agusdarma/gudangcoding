@@ -38,26 +38,26 @@
 <!-- CSS -->
 <link href='http://fonts.googleapis.com/css?family=Karla'
 	rel='stylesheet' type='text/css'>
-<link href="<s:url value='/Style/gudang_coding/style.css'/>"
+<link href="<s:url value='/Style/jakartasoftware/style.css'/>"
 	rel="stylesheet" type="text/css" media="all" />
-<link href="<s:url value='/Style/gudang_coding/magnific-popup.css'/>"
+<link href="<s:url value='/Style/jakartasoftware/magnific-popup.css'/>"
 	rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="<s:url value='/Style/gudang_coding/colorbox.css'/>">
+<link rel="stylesheet" href="<s:url value='/Style/jakartasoftware/colorbox.css'/>">
 <!--  <link id="csstheme" href="<s:url value='/Style/CSS/mmbstheme-persianblue-svg.css'/>" rel="stylesheet" type="text/css"/>-->
 
 <!-- JAVA SCRIPT -->
 <script
-	src="<s:url value='/Java Script/gudang_coding/jquery.magnific-popup.js'/>"
+	src="<s:url value='/Java Script/jakartasoftware/jquery.magnific-popup.js'/>"
 	type="text/javascript"></script>
 <script type="text/javascript"
-	src="<s:url value='/Java Script/gudang_coding/jquery.min.js'/>"></script>
+	src="<s:url value='/Java Script/jakartasoftware/jquery.min.js'/>"></script>
 <script type="text/javascript"
-	src="<s:url value='/Java Script/gudang_coding/jquery.flexisel.js'/>"></script>
-<script src="<s:url value='/Java Script/gudang_coding/jquery.imagesloaded.js'/>"></script>
-<script src="<s:url value='/Java Script/gudang_coding/jquery.colorbox-min.js'/>"></script>
-<script src="<s:url value='/Java Script/gudang_coding/jquery.wookmark.js'/>"></script>
-<script src="<s:url value='/Java Script/gudang_coding/jquery.wmuSlider.js'/>"></script> 
-<script type="text/javascript" src="<s:url value='/Java Script/gudang_coding/modernizr.custom.min.js'/>"></script> 
+	src="<s:url value='/Java Script/jakartasoftware/jquery.flexisel.js'/>"></script>
+<script src="<s:url value='/Java Script/jakartasoftware/jquery.imagesloaded.js'/>"></script>
+<script src="<s:url value='/Java Script/jakartasoftware/jquery.colorbox-min.js'/>"></script>
+<script src="<s:url value='/Java Script/jakartasoftware/jquery.wookmark.js'/>"></script>
+<script src="<s:url value='/Java Script/jakartasoftware/jquery.wmuSlider.js'/>"></script> 
+<script type="text/javascript" src="<s:url value='/Java Script/jakartasoftware/modernizr.custom.min.js'/>"></script> 
 <!--<script type="text/javascript" src="<s:url value='/Java Script/jquery-1.11.1.min.js'/>"></script>-->
 
 
