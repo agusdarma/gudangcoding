@@ -1,6 +1,6 @@
 @echo off
 
-set PATH_COMPILE=D:\Office\Project\MMBS-SUMUT
+set PATH_COMPILE=D:\Personal\Project\gudangcoding
 echo Compile %1 using path %PATH_COMPILE%
 if not "%2"=="" echo Additional Param: client=%2
 
@@ -9,9 +9,9 @@ if "%1" == "engine" goto compile_engine
 goto end
 
 :compile_web
-cd %PATH_COMPILE%\jets-mmbs-data
+cd %PATH_COMPILE%\jakarta-software-data
 call mvn clean install
-cd %PATH_COMPILE%\jets-mmbs-web
+cd %PATH_COMPILE%\jakarta-software-web
 call mvn clean package
 goto end
 
