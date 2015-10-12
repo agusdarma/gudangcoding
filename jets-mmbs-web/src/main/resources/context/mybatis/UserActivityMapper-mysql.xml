@@ -18,7 +18,7 @@
     limitations under the License.
 -->
 
-<mapper namespace="com.emobile.mmbs.web.mapper.UserActivityMapper">
+<mapper namespace="com.jakarta.software.web.mapper.UserActivityMapper">
     
 	<insert id="createUserActivity" parameterType="UserActivity" useGeneratedKeys="true" keyProperty="id">
 		INSERT INTO user_activity (action,  module_name, changed_attribute, updated_on, user_data_id, target_id, target_table)

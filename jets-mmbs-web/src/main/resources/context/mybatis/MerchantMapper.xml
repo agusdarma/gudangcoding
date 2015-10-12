@@ -18,7 +18,7 @@
     limitations under the License.
 -->
 
-<mapper namespace="com.emobile.mmbs.web.mapper.MerchantMapper">
+<mapper namespace="com.jakarta.software.web.mapper.MerchantMapper">
    
  	<update id="updateMerchant" parameterType="Merchant">
  	    update merchant

@@ -6,7 +6,7 @@
 <struts>
 	<package name="mmbs-customer-support" extends="mmbs-base">
         
-        <action name="Product!*" method="{1}" class="com.emobile.mmbs.web.action.customerSupport.ProductAction">
+        <action name="Product!*" method="{1}" class="com.jakarta.software.web.action.customerSupport.ProductAction">
             <interceptor-ref name="webSecureStack" />
             <result name="search">WEB-INF/pages/customer-support/product_search.jsp</result>
             <result name="input">WEB-INF/pages/customer-support/product_input.jsp</result>
@@ -33,7 +33,7 @@
 			</result>     
         </action>
 		
-        <action name="Merchant!*" method="{1}" class="com.emobile.mmbs.web.action.customerSupport.MerchantAction">
+        <action name="Merchant!*" method="{1}" class="com.jakarta.software.web.action.customerSupport.MerchantAction">
 			<interceptor-ref name="webSecureStack" />
 			<result name="search">/WEB-INF/pages/customer-support/merchant_search.jsp</result>
 			<result name="input">/WEB-INF/pages/customer-support/merchant_input.jsp</result>
@@ -47,7 +47,7 @@
 			</result>
 		</action>
         
-        <action name="TrxLogBrowser!*" method="{1}" class="com.emobile.mmbs.web.action.customerSupport.TrxLogBrowserAction">
+        <action name="TrxLogBrowser!*" method="{1}" class="com.jakarta.software.web.action.customerSupport.TrxLogBrowserAction">
 			<interceptor-ref name="webSecureStack" />
 			<result name="search">/WEB-INF/pages/customer-support/trxlogbrowser_search.jsp</result>
 			<result name="detail">/WEB-INF/pages/customer-support/trxlogbrowser_detail.jsp</result>
@@ -89,7 +89,7 @@
 			</result>
 		</action>
         
-        <action name="CIF!*" method="{1}" class="com.emobile.mmbs.web.action.customerSupport.CifAction">
+        <action name="CIF!*" method="{1}" class="com.jakarta.software.web.action.customerSupport.CifAction">
             <interceptor-ref name="webSecureStack" />
             <result name="search">WEB-INF/pages/customer-support/cif_search.jsp</result>           
             <result name="input">WEB-INF/pages/customer-support/cif_input.jsp</result>            
@@ -116,7 +116,7 @@
 			</result>     
         </action>
 
-		<action name="PrintStrukPln!*" method="{1}" class="com.emobile.mmbs.web.action.customerSupport.PrinStrukPlnAction">
+		<action name="PrintStrukPln!*" method="{1}" class="com.jakarta.software.web.action.customerSupport.PrinStrukPlnAction">
             <interceptor-ref name="webSecureStack" />
             <result name="search">WEB-INF/pages/customer-support/print_struk_pln.jsp</result>
 			<result name="searchJson" type="stream">
@@ -125,7 +125,7 @@
 			</result>     
         </action>
         
-		<action name="ResetPin!*" method="{1}" class="com.emobile.mmbs.web.action.customerSupport.ResetPinAction">
+		<action name="ResetPin!*" method="{1}" class="com.jakarta.software.web.action.customerSupport.ResetPinAction">
 			<interceptor-ref name="webSecureStack" />
 			<result name="search">/WEB-INF/pages/customer-support/reset_pin_search.jsp</result>
 			<result name="input">/WEB-INF/pages/customer-support/reset_pin_input.jsp</result>

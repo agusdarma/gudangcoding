@@ -7,7 +7,7 @@
 
 	<package name="mmbs-main" extends="mmbs-base">           		
 	
-		<action name="Login!*" method="{1}" class="com.emobile.mmbs.web.action.LoginAction">
+		<action name="Login!*" method="{1}" class="com.jakarta.software.web.action.LoginAction">
             <interceptor-ref name="webStack" />
             <result name="success" type="redirectAction">MainMenu</result>
             <result name="input">/WEB-INF/pages/login.jsp</result>
@@ -18,22 +18,22 @@
 			</result>
         </action>
         
-        <action name="Logout" method="logoff" class="com.emobile.mmbs.web.action.LoginAction">
+        <action name="Logout" method="logoff" class="com.jakarta.software.web.action.LoginAction">
             <interceptor-ref name="webStack" />
             <result name="success">/WEB-INF/pages/login.jsp</result>
         </action>
         
-        <action name="Contact" method="goToContact" class="com.emobile.mmbs.web.action.LoginAction">
+        <action name="Contact" method="goToContact" class="com.jakarta.software.web.action.LoginAction">
             <interceptor-ref name="webStack" />
             <result name="success">/WEB-INF/pages/contact.jsp</result>
         </action>
         
-        <action name="MainMenu" method="mainMenu" class="com.emobile.mmbs.web.action.LoginAction">
+        <action name="MainMenu" method="mainMenu" class="com.jakarta.software.web.action.LoginAction">
            <interceptor-ref name="webSecureStack" />
             <result name="success">/WEB-INF/pages/gudangcoding/main_menu.jsp</result>
         </action>
         
-        <action name="InvalidModule" method="invalidModule" class="com.emobile.mmbs.web.action.LoginAction">
+        <action name="InvalidModule" method="invalidModule" class="com.jakarta.software.web.action.LoginAction">
            <interceptor-ref name="webSecureStack" />
             <result name="success">/WEB-INF/pages/main_menu.jsp</result>
         </action>

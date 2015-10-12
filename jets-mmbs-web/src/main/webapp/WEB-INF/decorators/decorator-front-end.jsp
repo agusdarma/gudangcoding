@@ -11,18 +11,18 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="application-name" content="PT Gudang Coding Indonesia" />
+<meta name="application-name" content="PT Jakarta Software" />
 <meta name="description"
-	content="PT eMobile Indonesia provides mobile banking, internet banking and electronic banking solutions. Multiplatform Mobile Banking System (MMBS), Mobile Payment (mATM), Mobile Wallet (mWallet), Broadcast Management System (BMS) and Mobile Approval (MA)." />
+	content="PT Jakarta Software provides desktop application, mobile solutions, web application." />
 <meta name="keywords"
-	content="PT Emobile Indonesia, Mobile Banking, Internet Banking, Electronic Banking, BII Mobile Banking, Bank Mega Mobile, Bank Mayapada Mobile Banking, Multiplatform Mobile Banking System, Mobile Payment (mATM), Mobile Wallet (mWallet), Broadcast Management System (BMS), Mobile Approval (MA)" />
-<meta name="author" content="PT Emobile Indonesia" />
-<meta name="designer" content="PT Emobile Indonesia" />
-<meta name="copyright" content="Copyright 2014 PT Emobile Indonesia" />
+	content="PT Jakarta Software, Desktop Application, Mobile Application, Android, Iphone, Apple, Web Application" />
+<meta name="author" content="PT Jakarta Software" />
+<meta name="designer" content="PT Jakarta Software" />
+<meta name="copyright" content="Copyright 2015 PT Jakarta Software" />
 <meta
 	content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
 	name="viewport" />
-<title>PT Emobile Indonesia - MMBS, <decorator:title
+<title>PT Jakarta Software, <decorator:title
 		default="Welcome" /></title>
 
 <!-- FAVICON -->

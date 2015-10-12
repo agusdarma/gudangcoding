@@ -18,7 +18,7 @@
     limitations under the License.
 -->
 
-<mapper namespace="com.emobile.mmbs.web.mapper.CifMapper">
+<mapper namespace="com.jakarta.software.web.mapper.CifMapper">
 
 	 <insert id="createCif" parameterType="Cif" useGeneratedKeys="true" keyProperty="id">
     	INSERT INTO cif 

@@ -18,7 +18,7 @@
     limitations under the License.
 -->
 
-<mapper namespace="com.emobile.mmbs.web.mapper.SystemSettingMapper">
+<mapper namespace="com.jakarta.software.web.mapper.SystemSettingMapper">
     
     <update id="updateSystemSetting" parameterType="SystemSetting">
     	update system_setting set 

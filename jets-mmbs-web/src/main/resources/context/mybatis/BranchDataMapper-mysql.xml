@@ -19,7 +19,7 @@
 	limitations under the License.
 -->
 
-<mapper namespace="com.emobile.mmbs.web.mapper.BranchDataMapper">
+<mapper namespace="com.jakarta.software.web.mapper.BranchDataMapper">
 
 	<insert id="insertBranchData" parameterType="BranchData" useGeneratedKeys="true" keyProperty="id">
 		insert into branch_data(

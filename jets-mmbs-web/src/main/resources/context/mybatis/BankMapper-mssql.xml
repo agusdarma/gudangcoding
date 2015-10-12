@@ -18,7 +18,7 @@
     limitations under the License.
 -->
 
-<mapper namespace="com.emobile.mmbs.web.mapper.BankMapper">
+<mapper namespace="com.jakarta.software.web.mapper.BankMapper">
     
     <insert id="insertBank" parameterType="Bank" useGeneratedKeys="true" keyProperty="id">
 		insert into bank(bank_code, bank_name, switching,

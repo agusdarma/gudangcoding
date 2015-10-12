@@ -10,7 +10,7 @@
 	OR CONDITIONS OF ANY KIND, either express or implied. See the License for 
 	the specific language governing permissions and limitations under the License. -->
 
-<mapper namespace="com.emobile.mmbs.web.mapper.SystemSettingMapper">
+<mapper namespace="com.jakarta.software.web.mapper.SystemSettingMapper">
 	<select id="findSystemSettingByParam" resultType="SystemSetting" parameterType="SystemSettingParamVO">
         select <include refid="_sqlSystemSetting" />
 			from system_setting

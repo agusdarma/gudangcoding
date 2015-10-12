@@ -18,7 +18,7 @@
     limitations under the License.
 -->
 
-<mapper namespace="com.emobile.mmbs.web.mapper.PushRequestMapper">
+<mapper namespace="com.jakarta.software.web.mapper.PushRequestMapper">
     
 	<sql id="_sqlPushRequestHeader">
 		prh.id as id,

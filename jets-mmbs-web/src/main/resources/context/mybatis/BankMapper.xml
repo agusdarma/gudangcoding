@@ -18,7 +18,7 @@
     limitations under the License.
 -->
 
-<mapper namespace="com.emobile.mmbs.web.mapper.BankMapper">
+<mapper namespace="com.jakarta.software.web.mapper.BankMapper">
 
     <update id="updateBank" parameterType="Bank">
 		update bank

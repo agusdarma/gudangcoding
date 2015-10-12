@@ -6,7 +6,7 @@
 <struts>
 	<package name="mmbs-report" extends="mmbs-base">
 			
-		<action name="UserActivityReport!*" method="{1}" class="com.emobile.mmbs.web.action.report.UserActivityReportAction">
+		<action name="UserActivityReport!*" method="{1}" class="com.jakarta.software.web.action.report.UserActivityReportAction">
 			<interceptor-ref name="webSecureStack" />
 			<result name="search">/WEB-INF/pages/report/user_activity_report_search.jsp</result>
 			<result name="detail">/WEB-INF/pages/report/user_activity_report_detail.jsp</result>
@@ -40,7 +40,7 @@
 			</result>
 		</action>
 		
-		<action name="CifReport!*" method="{1}" class="com.emobile.mmbs.web.action.report.CifReportAction">
+		<action name="CifReport!*" method="{1}" class="com.jakarta.software.web.action.report.CifReportAction">
 			<interceptor-ref name="webSecureStack" />
 			<result name="search">/WEB-INF/pages/report/cif_report_search.jsp</result>
 			<result name="detail">/WEB-INF/pages/report/cif_report_detail.jsp</result>
@@ -74,7 +74,7 @@
 			</result>    
 		</action>
 		
-		<action name="MerchantReport!*" method="{1}" class="com.emobile.mmbs.web.action.report.MerchantReportAction">
+		<action name="MerchantReport!*" method="{1}" class="com.jakarta.software.web.action.report.MerchantReportAction">
 			<interceptor-ref name="webSecureStack" />
 			<result name="search">/WEB-INF/pages/report/merchant_report_search.jsp</result>
 			<result name="detail">/WEB-INF/pages/report/merchant_report_detail.jsp</result>
@@ -108,7 +108,7 @@
 			</result>
 		</action>
 		
-		<action name="AirtimeRefillReport!*" method="{1}" class="com.emobile.mmbs.web.action.report.AirtimeRefillReportAction">
+		<action name="AirtimeRefillReport!*" method="{1}" class="com.jakarta.software.web.action.report.AirtimeRefillReportAction">
 			<interceptor-ref name="webSecureStack" />
 			<result name="search">/WEB-INF/pages/report/airtime_refill_report.jsp</result>
 			<result name="searchJson" type="stream">
@@ -141,7 +141,7 @@
 			</result>
 		</action>
 
-		<action name="MatmPurchaseReport!*" method="{1}" class="com.emobile.mmbs.web.action.report.MatmPurchaseReportAction">
+		<action name="MatmPurchaseReport!*" method="{1}" class="com.jakarta.software.web.action.report.MatmPurchaseReportAction">
 			<interceptor-ref name="webSecureStack" />
 			<result name="search">/WEB-INF/pages/report/matm_purchase_report.jsp</result>
 			<result name="searchJson" type="stream">
@@ -174,7 +174,7 @@
 			</result>
 		</action>
 		
-		<action name="FundTransferReport!*" method="{1}" class="com.emobile.mmbs.web.action.report.FundTransferReportAction">
+		<action name="FundTransferReport!*" method="{1}" class="com.jakarta.software.web.action.report.FundTransferReportAction">
 			<interceptor-ref name="webSecureStack" />
 			<result name="search">/WEB-INF/pages/report/fund_transfer_report.jsp</result>
 			<result name="searchJson" type="stream">
@@ -207,7 +207,7 @@
 			</result>
 		</action>
 		
-		<action name="BillPaymentReport!*" method="{1}" class="com.emobile.mmbs.web.action.report.BillPaymentReportAction">
+		<action name="BillPaymentReport!*" method="{1}" class="com.jakarta.software.web.action.report.BillPaymentReportAction">
 			<interceptor-ref name="webSecureStack" />
 			<result name="search">/WEB-INF/pages/report/bill_payment_report.jsp</result>
 			<result name="searchJson" type="stream">
@@ -240,7 +240,7 @@
 			</result>
 		</action>
 		
-		<action name="BlastSmsReport!*" method="{1}" class="com.emobile.mmbs.web.action.report.BlastSmsReportAction">
+		<action name="BlastSmsReport!*" method="{1}" class="com.jakarta.software.web.action.report.BlastSmsReportAction">
 			<interceptor-ref name="webSecureStack" />
 			<result name="search">/WEB-INF/pages/report/blast_sms_report_search.jsp</result>
 			<result name="detail">/WEB-INF/pages/report/blast_sms_report_detail.jsp</result>			
@@ -274,7 +274,7 @@
 			</result>
 		</action>
 				
-		<action name="TerminatedCifReport!*" method="{1}" class="com.emobile.mmbs.web.action.report.TerminatedCifReportAction">
+		<action name="TerminatedCifReport!*" method="{1}" class="com.jakarta.software.web.action.report.TerminatedCifReportAction">
 			<interceptor-ref name="webSecureStack" />
 			<result name="search">/WEB-INF/pages/report/terminated_cif_report_search.jsp</result>
 			<result name="detail">/WEB-INF/pages/report/terminated_cif_report_detail.jsp</result>			
@@ -312,7 +312,7 @@
 			</result>
 		</action>
 		
-		<action name="AuditTrailAccount!*" method="{1}" class="com.emobile.mmbs.web.action.report.AuditTrailAccountAction">
+		<action name="AuditTrailAccount!*" method="{1}" class="com.jakarta.software.web.action.report.AuditTrailAccountAction">
 			<interceptor-ref name="webSecureStack" />
 			<result name="search">/WEB-INF/pages/report/audit_trail_account_report.jsp</result>
 			<result name="searchJson" type="stream">
@@ -345,7 +345,7 @@
 			</result>
 		</action>
 		
-		<action name="SummaryTransaction!*" method="{1}" class="com.emobile.mmbs.web.action.report.SummaryTransactionAction">
+		<action name="SummaryTransaction!*" method="{1}" class="com.jakarta.software.web.action.report.SummaryTransactionAction">
 			<interceptor-ref name="webSecureStack" />
 			<result name="search">/WEB-INF/pages/report/summary_transaction_report.jsp</result>
 			<result name="searchJson" type="stream">

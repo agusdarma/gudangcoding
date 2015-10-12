@@ -6,7 +6,7 @@
 <struts>
 	<package name="mmbs-supervisor" extends="mmbs-base">
         
-	    <action name="AuthCif!*" method="{1}" class="com.emobile.mmbs.web.action.supervisor.AuthCifAction">
+	    <action name="AuthCif!*" method="{1}" class="com.jakarta.software.web.action.supervisor.AuthCifAction">
             <interceptor-ref name="webSecureStack" />
             <result name="search">WEB-INF/pages/supervisor/auth_cif_search.jsp</result>
             <result name="input">WEB-INF/pages/supervisor/auth_cif_input.jsp</result>
@@ -25,7 +25,7 @@
 			</result>     
         </action>
         
-        <action name="AuthUserData!*" method="{1}" class="com.emobile.mmbs.web.action.supervisor.AuthUserDataAction">
+        <action name="AuthUserData!*" method="{1}" class="com.jakarta.software.web.action.supervisor.AuthUserDataAction">
             <interceptor-ref name="webSecureStack" />
             <result name="search">WEB-INF/pages/supervisor/auth_user_data_search.jsp</result>
             <result name="input">WEB-INF/pages/supervisor/auth_user_data_input.jsp</result>
@@ -44,7 +44,7 @@
 			</result>     
         </action>
         
-         <action name="AuthMerchant!*" method="{1}" class="com.emobile.mmbs.web.action.supervisor.AuthMerchantAction">
+         <action name="AuthMerchant!*" method="{1}" class="com.jakarta.software.web.action.supervisor.AuthMerchantAction">
             <interceptor-ref name="webSecureStack" />
             <result name="search">WEB-INF/pages/supervisor/auth_merchant_search.jsp</result>
             <result name="input">WEB-INF/pages/supervisor/auth_merchant_input.jsp</result>

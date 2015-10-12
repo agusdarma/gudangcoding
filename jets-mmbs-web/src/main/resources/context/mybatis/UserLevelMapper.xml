@@ -18,7 +18,7 @@
     limitations under the License.
 -->
 
-<mapper namespace="com.emobile.mmbs.web.mapper.UserLevelMapper">    
+<mapper namespace="com.jakarta.software.web.mapper.UserLevelMapper">    
     <select id="findUserMenuAll" resultType="UserMenu">
         select menu_id as menuId,
                 parent_id as parentId,

@@ -18,7 +18,7 @@
     limitations under the License.
 -->
 
-<mapper namespace="com.emobile.mmbs.web.mapper.CifHistoryMapper">
+<mapper namespace="com.jakarta.software.web.mapper.CifHistoryMapper">
     
 	<insert id="insertCifHistory" parameterType="CifHistory">
 		insert into cif_history (

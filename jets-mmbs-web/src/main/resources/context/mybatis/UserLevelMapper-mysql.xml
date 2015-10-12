@@ -18,7 +18,7 @@
     limitations under the License.
 -->
 
-<mapper namespace="com.emobile.mmbs.web.mapper.UserLevelMapper">
+<mapper namespace="com.jakarta.software.web.mapper.UserLevelMapper">
     
     <insert id="insertUserLevelMenu" parameterType="UserLevelMenu">
     	insert into user_level_menu(menu_id, level_id)

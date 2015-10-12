@@ -18,7 +18,7 @@
     limitations under the License.
 -->
 
-<mapper namespace="com.emobile.mmbs.web.mapper.MiscMapper">
+<mapper namespace="com.jakarta.software.web.mapper.MiscMapper">
     
     <select id="selectCurrentTime" resultType="java.util.Date">
         SELECT current_timestamp from dual

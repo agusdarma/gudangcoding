@@ -38,7 +38,7 @@
 	
 	<!-- scan for mappers and let them be autowired -->
 	<bean id="mapperScanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.emobile.mmbs.web.mapper" />
+		<property name="basePackage" value="com.jakarta.software.web.mapper" />
 	</bean>
 	
 	<!--

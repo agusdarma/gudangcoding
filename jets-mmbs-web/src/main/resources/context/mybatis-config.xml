@@ -10,13 +10,13 @@
 	</settings>
        
     <typeAliases>
-    <!-- <typeAlias alias="UserLevelMenuVO" type="com.emobile.mmbs.web.data.UserLevelMenuVO" />
+    <!-- <typeAlias alias="UserLevelMenuVO" type="com.jakarta.software.web.data.UserLevelMenuVO" />
     
-    	<typeAlias alias="UserInfoParamVO" type="com.emobile.mmbs.web.data.param.UserInfoParamVO" /> -->
+    	<typeAlias alias="UserInfoParamVO" type="com.jakarta.software.web.data.param.UserInfoParamVO" /> -->
     
-    	<package name="com.emobile.mmbs.web.entity"/>	
-    	<package name="com.emobile.mmbs.web.data"/>	
-    	<package name="com.emobile.mmbs.web.data.param"/>	
+    	<package name="com.jakarta.software.web.entity"/>	
+    	<package name="com.jakarta.software.web.data"/>	
+    	<package name="com.jakarta.software.web.data.param"/>	
     	
 	</typeAliases>
 

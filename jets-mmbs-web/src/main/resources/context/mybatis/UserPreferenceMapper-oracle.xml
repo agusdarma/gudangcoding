@@ -19,7 +19,7 @@
     limitations under the License.
 -->
 
-<mapper namespace="com.emobile.mmbs.web.mapper.UserPreferenceMapper">
+<mapper namespace="com.jakarta.software.web.mapper.UserPreferenceMapper">
 	
     
     <insert id="insertUserPreference" parameterType="UserPreference">

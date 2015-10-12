@@ -10,7 +10,7 @@
 	OR CONDITIONS OF ANY KIND, either express or implied. See the License for 
 	the specific language governing permissions and limitations under the License. -->
 	
-<mapper namespace="com.emobile.mmbs.web.mapper.AccountHistoryMapper">
+<mapper namespace="com.jakarta.software.web.mapper.AccountHistoryMapper">
 
 	<sql id="_sqlAccountHistory">
 		a.id as id,

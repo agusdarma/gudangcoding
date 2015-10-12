@@ -18,7 +18,7 @@
     limitations under the License.
 -->
 
-<mapper namespace="com.emobile.mmbs.web.mapper.GroupMsisdnMapper">
+<mapper namespace="com.jakarta.software.web.mapper.GroupMsisdnMapper">
     
 	<sql id="_sqlGroupMsisdnHeader">
 		gmh.id as id,

@@ -18,7 +18,7 @@
     limitations under the License.
 -->
 
-<mapper namespace="com.emobile.mmbs.web.mapper.TrxLogBrowserMapper">
+<mapper namespace="com.jakarta.software.web.mapper.TrxLogBrowserMapper">
      
      <select id="countTrxLogBrowserByParam" parameterType="TrxLogBrowserParamVO" resultType="java.lang.Integer" >
 		select count(h.syslogno) as count_id 

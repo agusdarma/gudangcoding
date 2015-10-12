@@ -18,7 +18,7 @@
     limitations under the License.
 -->
 
-<mapper namespace="com.emobile.mmbs.web.mapper.PushRequestMapper">
+<mapper namespace="com.jakarta.software.web.mapper.PushRequestMapper">
 	
 	<insert id="insertPushRequestHeader" parameterType="PushRequestHeader">
 		insert into PUSH_REQUEST_HEADER(sent_time,

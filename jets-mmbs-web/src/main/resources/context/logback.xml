@@ -66,7 +66,7 @@
     </encoder>
   </appender> 
   
-  <logger name="com.emobile.mmbs" level="DEBUG" additivity="false"><!--       CHECK THIS IF YOU START NEW PROJECT     -->
+  <logger name="com.jakarta.software" level="DEBUG" additivity="false"><!--       CHECK THIS IF YOU START NEW PROJECT     -->
     <appender-ref ref="MBW_FILE" />
     <appender-ref ref="STDOUT" />
   </logger>
@@ -86,7 +86,7 @@
     <appender-ref ref="STDOUT" />
   </logger>
   
-  <logger name="com.emobile.mmbs.web.mapper" level="TRACE" additivity="false"><!--       CHECK THIS IF YOU START NEW PROJECT     -->
+  <logger name="com.jakarta.software.web.mapper" level="TRACE" additivity="false"><!--       CHECK THIS IF YOU START NEW PROJECT     -->
     <appender-ref ref="SQL_FILE" />
     <appender-ref ref="STDOUT" />
   </logger>
