@@ -51,12 +51,6 @@
 	type="text/javascript"></script>
 <script type="text/javascript"
 	src="<s:url value='/Java Script/jakartasoftware/jquery.min.js'/>"></script>
-<script type="text/javascript"
-	src="<s:url value='/Java Script/jakartasoftware/jquery.flexisel.js'/>"></script>
-<script src="<s:url value='/Java Script/jakartasoftware/jquery.imagesloaded.js'/>"></script>
-<script src="<s:url value='/Java Script/jakartasoftware/jquery.colorbox-min.js'/>"></script>
-<script src="<s:url value='/Java Script/jakartasoftware/jquery.wookmark.js'/>"></script>
-<script src="<s:url value='/Java Script/jakartasoftware/jquery.wmuSlider.js'/>"></script> 
 <script type="text/javascript" src="<s:url value='/Java Script/jakartasoftware/modernizr.custom.min.js'/>"></script> 
 <!--<script type="text/javascript" src="<s:url value='/Java Script/jquery-1.11.1.min.js'/>"></script>-->
 
@@ -78,7 +72,52 @@
 		});
 	});
 </script>
-<script type="text/javascript">
+
+
+
+
+
+<decorator:head />
+</head>
+
+<body>
+
+
+	<decorator:body />
+	
+	<script src="<s:url value='/Java Script/jakartasoftware/jquery.imagesloaded.js'/>"></script>
+<script src="<s:url value='/Java Script/jakartasoftware/jquery.colorbox-min.js'/>"></script>
+<script src="<s:url value='/Java Script/jakartasoftware/jquery.wookmark.js'/>"></script> 
+<script src="<s:url value='/Java Script/jakartasoftware/jquery.wmuSlider.js'/>"></script>
+	<script>
+	 $('.example1').wmuSlider();         
+	</script>
+	<!-- Once the page is loaded, initalize the plug-in. -->
+  <script type="text/javascript">
+    (function ($){
+      $('#tiles').imagesLoaded(function() {
+        // Prepare layout options.
+        var options = {
+          autoResize: true, // This will auto-update the layout when the browser window is resized.
+          container: $('#main1'), // Optional, used for some extra CSS styling
+          offset: 2, // Optional, the distance between grid items
+          itemWidth:200 // Optional, the width of a grid item
+        };
+
+        // Get a reference to your grid items.
+        var handler = $('#tiles li');
+
+        // Call the layout function.
+        handler.wookmark(options);
+
+        // Init lightbox
+        $('a', handler).colorbox({
+          rel: 'lightbox'
+        });
+      });
+    })(jQuery);
+  </script>
+  <script type="text/javascript">
 	$(window).load(function() {
 		$("#flexiselDemo1").flexisel();
 		$("#flexiselDemo2").flexisel({
@@ -124,57 +163,20 @@
 
 	});
 </script>
-
-
-<script>
-	 $('.example1').wmuSlider();         
-</script>
-
-<decorator:head />
-</head>
-
-<body>
-
-
-	<decorator:body />
-	<!-- Once the page is loaded, initalize the plug-in. -->
-  <script type="text/javascript">
-    (function ($){
-      $('#tiles').imagesLoaded(function() {
-        // Prepare layout options.
-        var options = {
-          autoResize: true, // This will auto-update the layout when the browser window is resized.
-          container: $('#main1'), // Optional, used for some extra CSS styling
-          offset: 2, // Optional, the distance between grid items
-          itemWidth:200 // Optional, the width of a grid item
-        };
-
-        // Get a reference to your grid items.
-        var handler = $('#tiles li');
-
-        // Call the layout function.
-        handler.wookmark(options);
-
-        // Init lightbox
-        $('a', handler).colorbox({
-          rel: 'lightbox'
-        });
-      });
-    })(jQuery);
-  </script>
+<script type="text/javascript"
+	src="<s:url value='/Java Script/jakartasoftware/jquery.flexisel.js'/>"></script>
 </body>
 
 <!-- FOOTER -->
 <div class="footer-bottom">
 	 	<div class="wrap">
 		 	<div class="copy">
-			     <p class="copy">© 2013 Template by <a href="http://w3layouts.com" target="_blank">w3layouts</a></p>
+			     <p class="copy">© 2015 PT Jakarta Software Design by <a href="http://w3layouts.com" target="_blank">w3layouts</a></p>
 		    </div>
 		 	<div class="footer-nav">
 		 		<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="portfolio.html">Portfolio</a></li> 
-					<li><a href="blog.html">Blog</a></li> 
+					<li><a href="MainMenu.web">Home</a></li>
+					<li><a href="Portfolio.web">Portfolio</a></li> 					
 					<li><a href="about.html">About Us</a></li> 
 					<li><a href="contact.html">Contact</a></li>
 				</ul>

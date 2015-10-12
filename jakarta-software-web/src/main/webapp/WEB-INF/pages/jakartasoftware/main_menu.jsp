@@ -19,8 +19,7 @@
 			 <div class="cssmenu">
 				<ul>
 					<li class="active"><a href="MainMenu.web">Home</a></li>
-					<li><a href="portfolio.html">Portfolio</a></li> 
-					<!--  <li><a href="blog.html">Blog</a></li>--> 
+					<li><a href="Portfolio.web">Portfolio</a></li> 
 					<li><a href="about.html">About Us</a></li> 
 					<li><a href="contact.html">Contact</a></li>
 				</ul>
@@ -93,17 +92,17 @@
 								    				<tr>
 								        				<td class="plan_list_title">Wordpress Support</td>
 												        <td class="price_body"><img src="<s:url value='/Resource/images/icon-remove.png'/>" alt="img"></td>
-											    	    <td class="price_body"><img src="images/tickmark-icon.png" alt="img"></td>
+											    	    <td class="price_body"><img src="<s:url value='/Resource/images/tickmark-icon.png'/>" alt="img"></td>
 								    				</tr>
 								    				<tr>
 								        				<td class="plan_list_title">24/7 Support</td>
-								        				<td class="price_body"><img src="images/tickmark-icon.png" alt="img"></td>
-											        	<td class="price_body"><img src="images/tickmark-icon.png" alt="img"></td>
+								        				<td class="price_body"><img src="<s:url value='/Resource/images/tickmark-icon.png'/>" alt="img"></td>
+											        	<td class="price_body"><img src="<s:url value='/Resource/images/tickmark-icon.png'/>" alt="img"></td>
 								    				</tr>
 								    				<tr>
 								        				<td class="plan_list_title">Backups</td>
-												    	<td class="price_body"><img src="images/tickmark-icon.png" alt="img"></td>
-												        <td class="price_body"><img src="images/tickmark-icon.png" alt="img"></td>
+												    	<td class="price_body"><img src="<s:url value='/Resource/images/tickmark-icon.png'/>" alt="img"></td>
+												        <td class="price_body"><img src="<s:url value='/Resource/images/tickmark-icon.png'/>" alt="img"></td>
 								    				</tr>
 								    				<tr>
 								        				<td class="plan_list_title">Dedicated IP</td>
@@ -195,11 +194,13 @@
                 	<li><a href="#">4</a></li>
                   </ul>
         </div>
-            	 <script src="js/jquery.wmuSlider.js"></script> 
+            	 <!--<script src="js/jquery.wmuSlider.js"></script> 
 				 <script type="text/javascript" src="js/modernizr.custom.min.js"></script> 
 						<script>
        						 $('.example1').wmuSlider();         
-   						</script> 	           	      
+   						</script>
+   				-->
+   				           	      
    </div>
 				<!---//End-da-slider----->
   <div class="main">
@@ -209,14 +210,14 @@
 			<h5>We Specialize in Web Design / Development and Graphic Design</h5>
 			<div class="section group">
 				<div class="col_1_of_4 span_1_of_first">
-					<img src="images/pic.jpg" alt=""/>
+					<img src="<s:url value='/Resource/images/pic.jpg'/>" alt=""/>
 					<div class="desc">
 					   <h4>Redesigning<br> with personality<br><span>in<span class="small">&nbsp;web design</span></span><div class="clear"></div></h4>
 					</div> 
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
 					<div class="grid1">
-						<img src="images/icon1.png" alt=""/>
+						<img src="<s:url value='/Resource/images/icon1.png'/>" alt=""/>
 						<h4>Web development</h4>
 					</div>
 					<div class="desc">
@@ -225,7 +226,7 @@
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
 					<div class="grid1">
-						<img src="images/icon2.png" alt=""/>
+						<img src="<s:url value='/Resource/images/icon2.png'/>" alt=""/>
 						<h4>Web design</h4>
 					</div>
 					<div class="desc">
@@ -234,7 +235,7 @@
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
 					<div class="grid1">
-						<img src="images/icon3.png" alt=""/>
+						<img src="<s:url value='/Resource/images/icon3.png'/>" alt=""/>
 						<h4>Graphic design</h4>
 					</div>
 					<div class="desc">
@@ -253,159 +254,128 @@
        <ul id="tiles">
         <!-- These are our grid blocks -->
         <li>
-          <a href="images/t-pic1.jpg" rel="lightbox" class="cboxElement">
-            <img src="images/pic1.jpg" width="200" height="283">
+          <a href="<s:url value='/Resource/images/t-pic1.jpg'/>" rel="lightbox" class="cboxElement">
+            <img src="<s:url value='/Resource/images/pic1.jpg'/>" width="200" height="283">
           </a>
         </li>
         <li>
-          <a href="images/t-pic2.jpg" rel="lightbox" class="cboxElement">
-            <img src="images/pic2.jpg" width="200" height="300">
+          <a href="<s:url value='/Resource/images/t-pic2.jpg'/>" rel="lightbox" class="cboxElement">
+            <img src="<s:url value='/Resource/images/pic2.jpg'/>" width="200" height="300">
           </a>
        </li>
         <li>
-          <a href="images/t-pic3.jpg" rel="lightbox" class="cboxElement">
-            <img src="images/pic3.jpg" width="200" height="252">
+          <a href="<s:url value='/Resource/images/t-pic3.jpg'/>" rel="lightbox" class="cboxElement">
+            <img src="<s:url value='/Resource/images/pic3.jpg'/>" width="200" height="252">
           </a>
        </li>
         <li>
-          <a href="images/t-pic4.jpg" rel="lightbox" class="cboxElement">
-            <img src="images/pic4.jpg" width="200" height="158">
+          <a href="<s:url value='/Resource/images/t-pic4.jpg'/>" rel="lightbox" class="cboxElement">
+            <img src="<s:url value='/Resource/images/pic4.jpg'/>" width="200" height="158">
           </a>
         </li>
         <li>
-          <a href="images/t-pic5.jpg" rel="lightbox" class="cboxElement">
-            <img src="images/pic5.jpg" width="200" height="265">
+          <a href="<s:url value='/Resource/images/t-pic5.jpg'/>" rel="lightbox" class="cboxElement">
+            <img src="<s:url value='/Resource/images/pic5.jpg'/>" width="200" height="265">
           </a>
        </li>
         <li>
-          <a href="images/pic6.jpg" rel="lightbox" class="cboxElement">
-            <img src="images/pic6.jpg" width="200" height="158">
+          <a href="<s:url value='/Resource/images/pic6.jpg'/>" rel="lightbox" class="cboxElement">
+            <img src="<s:url value='/Resource/images/pic6.jpg'/>" width="200" height="158">
           </a>
         </li>
         <li>
-          <a href="images/pic7.jpg" rel="lightbox" class="cboxElement">
-            <img src="images/pic7.jpg" width="200" height="200">
+          <a href="<s:url value='/Resource/images/pic7.jpg'/>" rel="lightbox" class="cboxElement">
+            <img src="<s:url value='/Resource/images/pic7.jpg'/>" width="200" height="200">
           </a>
         </li>
         <li>
-          <a href="images/pic8.jpg" rel="lightbox" class="cboxElement">
-            <img src="images/pic8.jpg" width="200" height="200">
+          <a href="<s:url value='/Resource/images/pic8.jpg'/>" rel="lightbox" class="cboxElement">
+            <img src="<s:url value='/Resource/images/pic8.jpg'/>" width="200" height="200">
           </a>
         </li>
         <li>
-          <a href="images/pic9.jpg" rel="lightbox" class="cboxElement">
-            <img src="images/pic9.jpg" width="200" height="133">
+          <a href="<s:url value='/Resource/images/pic9.jpg'/>" rel="lightbox" class="cboxElement">
+            <img src="<s:url value='/Resource/images/pic9.jpg'/>" width="200" height="133">
           </a>
         </li>
         <li>
-          <a href="images/pic10.jpg" rel="lightbox" class="cboxElement">
-            <img src="images/pic10.jpg" width="200" height="193">
+          <a href="<s:url value='/Resource/images/pic10.jpg'/>" rel="lightbox" class="cboxElement">
+            <img src="<s:url value='/Resource/images/pic10.jpg'/>" width="200" height="193">
           </a>
         </li>
         <li>
-          <a href="images/pic11.jpg" rel="lightbox" class="cboxElement">
-            <img src="images/pic11.jpg" width="200" height="283">
+          <a href="<s:url value='/Resource/images/pic11.jpg'/>" rel="lightbox" class="cboxElement">
+            <img src="<s:url value='/Resource/images/pic11.jpg'/>" width="200" height="283">
           </a>
        </li>
         <li>
-          <a href="images/t-pic1.jpg" rel="lightbox" class="cboxElement">
-            <img src="images/pic1.jpg" width="200" height="283">
+          <a href="<s:url value='/Resource/images/t-pic1.jpg'/>" rel="lightbox" class="cboxElement">
+            <img src="<s:url value='/Resource/images/pic1.jpg'/>" width="200" height="283">
           </a>
         </li>
         <li>
-          <a href="images/t-pic2.jpg" rel="lightbox" class="cboxElement">
-            <img src="images/pic2.jpg" width="200" height="300">
+          <a href="<s:url value='/Resource/images/t-pic2.jpg'/>" rel="lightbox" class="cboxElement">
+            <img src="<s:url value='/Resource/images/pic2.jpg'/>" width="200" height="300">
           </a>
        </li>
         <li>
-          <a href="images/t-pic3.jpg" rel="lightbox" class="cboxElement">
-            <img src="images/pic3.jpg" width="200" height="252">
+          <a href="<s:url value='/Resource/images/t-pic3.jpg'/>" rel="lightbox" class="cboxElement">
+            <img src="<s:url value='/Resource/images/pic3.jpg'/>" width="200" height="252">
           </a>
        </li>
         <li>
-          <a href="images/t-pic4.jpg" rel="lightbox" class="cboxElement">
-            <img src="images/pic4.jpg" width="200" height="158">
+          <a href="<s:url value='/Resource/images/t-pic4.jpg'/>" rel="lightbox" class="cboxElement">
+            <img src="<s:url value='/Resource/images/pic4.jpg'/>" width="200" height="158">
           </a>
         </li>
         <li>
-          <a href="images/t-pic5.jpg" rel="lightbox" class="cboxElement">
-            <img src="images/pic5.jpg" width="200" height="265">
+          <a href="<s:url value='/Resource/images/t-pic5.jpg'/>" rel="lightbox" class="cboxElement">
+            <img src="<s:url value='/Resource/images/pic5.jpg'/>" width="200" height="265">
           </a>
        </li>
         <li>
-          <a href="images/pic6.jpg" rel="lightbox" class="cboxElement">
-            <img src="images/pic6.jpg" width="200" height="158">
+          <a href="<s:url value='/Resource/images/pic6.jpg'/>" rel="lightbox" class="cboxElement">
+            <img src="<s:url value='/Resource/images/pic6.jpg'/>" width="200" height="158">
           </a>
         </li>
         <li>
-          <a href="images/pic7.jpg" rel="lightbox" class="cboxElement">
-            <img src="images/pic7.jpg" width="200" height="200">
+          <a href="<s:url value='/Resource/images/pic7.jpg'/>" rel="lightbox" class="cboxElement">
+            <img src="<s:url value='/Resource/images/pic7.jpg'/>" width="200" height="200">
           </a>
         </li>
         <li>
-          <a href="images/pic8.jpg" rel="lightbox" class="cboxElement">
-            <img src="images/pic8.jpg" width="200" height="200">
+          <a href="<s:url value='/Resource/images/pic8.jpg'/>" rel="lightbox" class="cboxElement">
+            <img src="<s:url value='/Resource/images/pic8.jpg'/>" width="200" height="200">
           </a>
         </li>
         <li>
-          <a href="images/pic9.jpg" rel="lightbox" class="cboxElement">
-            <img src="images/pic9.jpg" width="200" height="133">
+          <a href="<s:url value='/Resource/images/pic9.jpg'/>" rel="lightbox" class="cboxElement">
+            <img src="<s:url value='/Resource/images/pic9.jpg'/>" width="200" height="133">
           </a>
         </li>
         <li>
-          <a href="images/pic10.jpg" rel="lightbox" class="cboxElement">
-            <img src="images/pic10.jpg" width="200" height="193">
+          <a href="<s:url value='/Resource/images/pic10.jpg'/>" rel="lightbox" class="cboxElement">
+            <img src="<s:url value='/Resource/images/pic10.jpg'/>" width="200" height="193">
           </a>
         </li>
      </ul>
    </div> 
   </div>
-   <link rel="stylesheet" href="css/colorbox.css">
-  <!-- Include the imagesLoaded plug-in -->
-  <script src="js/jquery.imagesloaded.js"></script>
-  <!-- include colorbox -->
-  <script src="js/jquery.colorbox-min.js"></script>
-  <!-- Include the plug-in -->
-  <script src="js/jquery.wookmark.js"></script>
-  <!-- Once the page is loaded, initalize the plug-in. -->
-  <script type="text/javascript">
-    (function ($){
-      $('#tiles').imagesLoaded(function() {
-        // Prepare layout options.
-        var options = {
-          autoResize: true, // This will auto-update the layout when the browser window is resized.
-          container: $('#main1'), // Optional, used for some extra CSS styling
-          offset: 2, // Optional, the distance between grid items
-          itemWidth:200 // Optional, the width of a grid item
-        };
-
-        // Get a reference to your grid items.
-        var handler = $('#tiles li');
-
-        // Call the layout function.
-        handler.wookmark(options);
-
-        // Init lightbox
-        $('a', handler).colorbox({
-          rel: 'lightbox'
-        });
-      });
-    })(jQuery);
-  </script>
 </div>
    <div class="content-bottom">
 		<h2><span>Our Clients</span></h2>  
 		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</p>     
 		<ul id="flexiselDemo3">
-			<li><img src="images/client1.jpg" /></li>
-			<li><img src="images/client2.jpg" /></li>
-			<li><img src="images/client3.jpg" /></li>
-			<li><img src="images/client4.jpg" /></li>
-			<li><img src="images/client5.jpg" /></li>
-			<li><img src="images/client6.jpg" /></li>
-			<li><img src="images/client7.jpg" /></li>
-			<li><img src="images/client8.jpg" /></li>
+			<li><img src="<s:url value='/Resource/images/client1.jpg'/>" /></li>
+			<li><img src="<s:url value='/Resource/images/client2.jpg'/>" /></li>
+			<li><img src="<s:url value='/Resource/images/client3.jpg'/>" /></li>
+			<li><img src="<s:url value='/Resource/images/client4.jpg'/>" /></li>
+			<li><img src="<s:url value='/Resource/images/client5.jpg'/>" /></li>
+			<li><img src="<s:url value='/Resource/images/client6.jpg'/>" /></li>
+			<li><img src="<s:url value='/Resource/images/client7.jpg'/>" /></li>
+			<li><img src="<s:url value='/Resource/images/client8.jpg'/>" /></li>
 		</ul>
+		<!--  
 	<script type="text/javascript">
 $(window).load(function() {
 	$("#flexiselDemo1").flexisel();
@@ -453,6 +423,7 @@ $(window).load(function() {
 });
 </script>
 <script type="text/javascript" src="js/jquery.flexisel.js"></script>
+-->
 </div>
 </div>	
   <div class="footer">
@@ -466,16 +437,16 @@ $(window).load(function() {
 					<h4>Photo Stream</h4>
 					<div class="gallery">
 						<ul>
-							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/g1.jpg" alt=""/></a></li>
-							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/g2.jpg" alt=""/></a></li>
-							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/g3.jpg" alt=""/></a></li>
-							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/g4.jpg" alt=""/></a></li>
-							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/g5.jpg" alt=""/></a></li>
-							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/g6.jpg" alt=""/></a></li>
+							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="<s:url value='/Resource/images/g1.jpg'/>" alt=""/></a></li>
+							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="<s:url value='/Resource/images/g2.jpg'/>" alt=""/></a></li>
+							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="<s:url value='/Resource/images/g3.jpg'/>" alt=""/></a></li>
+							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="<s:url value='/Resource/images/g4.jpg'/>" alt=""/></a></li>
+							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="<s:url value='/Resource/images/g5.jpg'/>" alt=""/></a></li>
+							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="<s:url value='/Resource/images/g6.jpg'/>" alt=""/></a></li>
 							 <div id="small-dialog1" class="mfp-hide">
 								<div class="pop_up">
 								 	<h2>A Sample Photo Stream</h2>
-									<img src="images/g_zoom.jpg" alt=""/>
+									<img src="<s:url value='/Resource/images/g_zoom.jpg'/>" alt=""/>
 					  			</div>
 							</div>
 						</ul>
@@ -485,11 +456,11 @@ $(window).load(function() {
 					<h3>Latest tweets</h3>
 					<div class="footer-list">
 						<ul>
-							<li><img src="images/tw.png" alt=""/><p>Lorem ipsum <span class="yellow"><a href="#">consectetuer</a></span> adipiscing elit, seddia<br><span class="small">&nbsp;web design</span></p><div class="clear"></div></li>
-							<li><img src="images/tw.png" alt=""/><p>Lorem ipsum <span class="yellow"><a href="#">consectetuer</a></span> adipiscing elit, seddia<br><span class="small">&nbsp;web design</span></p><div class="clear"></div></li>
-							<li><img src="images/tw.png" alt=""/><p>Lorem ipsum dolor sit amet, <span class="yellow"><a href="#">consectetuer</a></span> adipiscing elit, sed diam nonummy nibh<br><span class="small">&nbsp;web design</span></p><div class="clear"></div></li>
-							<li><img src="images/tw.png" alt=""/><p>Lorem ipsum dolor sit amet, <span class="yellow"><a href="#">consectetuer</a></span> adipiscing elit, sed diam nonummy nibh<br><span class="small">&nbsp;web design</span></p><div class="clear"></div></li>
-							<li><img src="images/tw.png" alt=""/><p>Lorem ipsum <span class="yellow"><a href="#">consectetuer</a></span> adipiscing elit, seddia<br><span class="small">&nbsp;web design</span></p><div class="clear"></div></li>
+							<li><img src="<s:url value='/Resource/images/tw.png'/>" alt=""/><p>Lorem ipsum <span class="yellow"><a href="#">consectetuer</a></span> adipiscing elit, seddia<br><span class="small">&nbsp;web design</span></p><div class="clear"></div></li>
+							<li><img src="<s:url value='/Resource/images/tw.png'/>" alt=""/><p>Lorem ipsum <span class="yellow"><a href="#">consectetuer</a></span> adipiscing elit, seddia<br><span class="small">&nbsp;web design</span></p><div class="clear"></div></li>
+							<li><img src="<s:url value='/Resource/images/tw.png'/>" alt=""/><p>Lorem ipsum dolor sit amet, <span class="yellow"><a href="#">consectetuer</a></span> adipiscing elit, sed diam nonummy nibh<br><span class="small">&nbsp;web design</span></p><div class="clear"></div></li>
+							<li><img src="<s:url value='/Resource/images/tw.png'/>" alt=""/><p>Lorem ipsum dolor sit amet, <span class="yellow"><a href="#">consectetuer</a></span> adipiscing elit, sed diam nonummy nibh<br><span class="small">&nbsp;web design</span></p><div class="clear"></div></li>
+							<li><img src="<s:url value='/Resource/images/tw.png'/>" alt=""/><p>Lorem ipsum <span class="yellow"><a href="#">consectetuer</a></span> adipiscing elit, seddia<br><span class="small">&nbsp;web design</span></p><div class="clear"></div></li>
 						</ul>
 					</div>
 					 <div class="social-icons">	
@@ -510,9 +481,9 @@ $(window).load(function() {
 					<h3>Contact info</h3>
 					<div class="footer-list">
 						<ul>
-							<li><img src="images/address.png" alt=""/><p>Lorem ipsum dolor sit amet,consectetuer adipiscing elit, sed diam nonummy nibh<br>&nbsp;web design</p><div class="clear"></div></li>
-							<li><img src="images/phone.png" alt=""/><p>Phone: +1 800 258 2689<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+1 800 258 2689 </p><div class="clear"></div></li>
-							<li><img src="images/msg.png" alt=""/><p>Email: <span class="yellow"><a href="#">info(at)skokov.com</a></span></p><div class="clear"></div></li>
+							<li><img src="<s:url value='/Resource/images/address.png'/>" alt=""/><p>Lorem ipsum dolor sit amet,consectetuer adipiscing elit, sed diam nonummy nibh<br>&nbsp;web design</p><div class="clear"></div></li>
+							<li><img src="<s:url value='/Resource/images/phone.png'/>" alt=""/><p>Phone: +1 800 258 2689<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+1 800 258 2689 </p><div class="clear"></div></li>
+							<li><img src="<s:url value='/Resource/images/msg.png'/>" alt=""/><p>Email: <span class="yellow"><a href="#">info(at)skokov.com</a></span></p><div class="clear"></div></li>
 					   </ul>
 					</div>
 					<div class="follow">
