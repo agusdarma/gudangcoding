@@ -80,14 +80,14 @@
   <div class="header">	
       <div class="wrap"> 
 	         <div class="logo">
-				<a href="index.html"><img src="<s:url value='/Resource/images/logo.png'/>" alt=""/></a>
+				<a href="MainMenu.web"><img src="<s:url value='/Resource/images/logo.png'/>" alt=""/></a>
 			 </div>
 			 <div class="cssmenu">
 				<ul>
 					<li class="active"><a href="MainMenu.web">Home</a></li>
 					<li><a href="Portfolio.web">Portfolio</a></li> 
-					<li><a href="about.html">About Us</a></li> 
-					<li><a href="contact.html">Contact</a></li>
+					<li><a href="About.web">About Us</a></li> 
+					<li><a href="Contact.web">Contact</a></li>
 				</ul>
 		     </div>
 		    <div class="clear"></div>
@@ -324,8 +324,8 @@
 		 		<ul>
 					<li><a href="MainMenu.web">Home</a></li>
 					<li><a href="Portfolio.web">Portfolio</a></li> 					
-					<li><a href="about.html">About Us</a></li> 
-					<li><a href="contact.html">Contact</a></li>
+					<li><a href="About.web">About Us</a></li> 
+					<li><a href="Contact.web">Contact</a></li>
 				</ul>
 		 	</div>
 		 	<div class="clear"></div>

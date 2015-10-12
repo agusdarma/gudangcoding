@@ -17,7 +17,11 @@
         
         <action name="About" class="com.jakarta.software.web.action.AboutAction">
             <result name="input">/WEB-INF/pages/jakartasoftware/about.jsp</result>
-        </action>		
+        </action>	
+        
+        <action name="Contact" class="com.jakarta.software.web.action.ContactAction">
+            <result name="input">/WEB-INF/pages/jakartasoftware/contact.jsp</result>
+        </action>	
 	
 		<action name="Login!*" method="{1}" class="com.jakarta.software.web.action.LoginAction">
             <interceptor-ref name="webStack" />
@@ -35,7 +39,7 @@
             <result name="success">/WEB-INF/pages/login.jsp</result>
         </action>
         
-        <action name="Contact" method="goToContact" class="com.jakarta.software.web.action.LoginAction">
+        <action name="ContactOld" method="goToContact" class="com.jakarta.software.web.action.LoginAction">
             <interceptor-ref name="webStack" />
             <result name="success">/WEB-INF/pages/contact.jsp</result>
         </action>             

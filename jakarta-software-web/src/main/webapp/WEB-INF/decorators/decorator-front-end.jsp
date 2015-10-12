@@ -177,8 +177,8 @@
 		 		<ul>
 					<li><a href="MainMenu.web">Home</a></li>
 					<li><a href="Portfolio.web">Portfolio</a></li> 					
-					<li><a href="about.html">About Us</a></li> 
-					<li><a href="contact.html">Contact</a></li>
+					<li><a href="About.web">About Us</a></li> 
+					<li><a href="Contact.web">Contact</a></li>
 				</ul>
 		 	</div>
 		 	<div class="clear"></div>
