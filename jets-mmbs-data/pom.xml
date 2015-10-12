@@ -3,17 +3,17 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/maven-v4_0_0.xsd">
 	<parent>
-		<groupId>com.emobile</groupId>
-		<artifactId>jets-mmbs-parent</artifactId>
+		<groupId>com.jakarta.software</groupId>
+		<artifactId>jakarta-software-parent</artifactId>
 		<version>1.0.0</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.emobile</groupId>
-	<artifactId>jets-mmbs-data</artifactId>
-	<name>MMBS Data Library</name>
+	<artifactId>jakarta-software-data</artifactId>
+	<name>Jakarta Software Library</name>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
-	<description>Emobile MMBS Data Library</description>
+	<description>Jakarta Software Data Library</description>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
