@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<!-- META DATA -->
-		<meta name="decorator" content="home-gudang-coding">
+		<meta name="decorator" content="home-jakarta-software">
 		<title><s:text name="t.home"/></title>
 	</head>
 
