@@ -5,6 +5,15 @@
 
 <html>
 <head>
+<%-- FAVICON --%>
+<link rel="shortcut icon"
+	href="<s:url value='/Resource/Icon/favicon.ico'/>" />
+<link rel="shortcut icon"
+	href="<s:url value='/Resource/Icon/favicon.ico'/>"
+	type="image/x-icon">
+<link rel="icon"
+	href="<s:url value='/Resource/Icon/favicon.ico'/>"
+	type="image/x-icon">
 <title>PT Jakarta Software : Coming Soon</title>
 <meta name="application-name" content="PT Jakarta Software" />
 <meta name="description" content="PT Jakarta Software provides desktop application, mobile solutions, web application." />
