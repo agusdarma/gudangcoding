@@ -5,6 +5,15 @@
 
 <html>
 	<head>
+<!-- FAVICON -->
+<link rel="shortcut icon"
+	href="<s:url value='/Resource/Icon/favicon.ico'/>" />
+<link rel="shortcut icon"
+	href="<s:url value='/Resource/Icon/favicon.ico'/>"
+	type="image/x-icon">
+<link rel="icon"
+	href="<s:url value='/Resource/Icon/favicon.ico'/>"
+	type="image/x-icon">
 <title><s:text name="t.home"/></title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

@@ -33,9 +33,7 @@
 		<default-interceptor-ref name="webStack" />
 
 		<global-results>
-			<!-- 
-			<result name="error">/WEB-INF/pages/error.jsp</result>
-			-->
+			
 			<result name="sessionExpired" type="redirectAction">
 				<param name="actionName">Login!expired</param>
 			</result>
@@ -52,6 +50,11 @@
 			<exception-mapping result="error" exception="java.lang.Throwable"/>
 		</global-exception-mappings>
 		-->
+		
+		<action name="*">
+            <result>/WEB-INF/pages/jakartasoftware/404.jsp</result>
+        </action>
+        
 		
 	</package>
 </struts>

@@ -19,29 +19,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href='http://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
 <link href="<s:url value='/Style/jakartasoftware/style.css'/>" rel="stylesheet" type="text/css" media="all" />
-<!-- Add fancyBox main JS and CSS files -->
-<script src="<s:url value='/Java Script/jakartasoftware/jquery.min.js'/>"></script>
-<script src="<s:url value='/Java Script/jakartasoftware/jquery.magnific-popup.js'/>" type="text/javascript"></script>
-<link href="<s:url value='/Style/jakartasoftware/magnific-popup.css'/>" rel="stylesheet" type="text/css">
-		<script>
-			$(document).ready(function() {
-				$('.popup-with-zoom-anim').magnificPopup({
-					type: 'inline',
-					fixedContentPos: false,
-					fixedBgPos: true,
-					overflowY: 'auto',
-					closeBtnInside: true,
-					preloader: false,
-					midClick: true,
-					removalDelay: 300,
-					mainClass: 'my-mfp-zoom-in'
-			});
-		});
-		</script>
 </head>
 <body>
   <div class="header">	
-       <div class="wrap"> 
+      <div class="wrap"> 
 	         <div class="logo">
 				<a href="MainMenu.web"><img src="<s:url value='/Resource/images/logo.png'/>" alt=""/></a>
 			 </div>
@@ -58,46 +39,19 @@
    </div>
    <div class="banner">
       	<div class="wrap">
-      	    <h2>Contact</h2><div class="clear"></div>
+      	    <h2>404 Error</h2><div class="clear"></div>
       	</div>
     </div>
   <div class="main">	
-	 <div class="project-wrapper">
-	 	<div class="map">
-		   <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265&amp;output=embed"></iframe><br><small><a href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265" style="color:#666;text-align:left;font-size:12px"></a></small>
-	    </div> 
-	    <div class="wrap">
-	 	  <div class="contact">
-	 	  		<div class="cont span_2_of_contact">
-	 	  		<h5 class="leave">Send Us A Message</h5><div class="clear"></div>	
-				  <form method="post" action="contact-post.html">
-					<div class="contact-to">
-                     	<input type="text" class="text" value="Name..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name...';}">
-					 	<input type="text" class="text" value="Email..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email...';}" style="margin-left: 10px">
-					 	<input type="text" class="text" value="Subject..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject...';}" style="margin-left: 10px">
-					</div>
-					<div class="text2">
-	                   <textarea value="Message:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Message..</textarea>
-	                </div>
-	                <div>
-	               		<a href="#" class="submit">Send a Message</a>
-	                </div>
-	             </form>
-				</div>
-				<div class="lsidebar span_1_of_about">
-				   <h5 class="leave">Contact Info</h5><div class="clear"></div>
-				   <div class="contact-list">
-						<ul>
-							<li><img src="<s:url value='/Resource/images/address.png'/>" alt=""><p>Lorem ipsum dolor sit amet, adipiscing elit, sed diam nonummy nibh</p><div class="clear"></div></li>
-							<li><img src="<s:url value='/Resource/images/phone.png'/>" alt=""><p>Phone: +1 800 258 2689<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+1 800 258 2689 </p><div class="clear"></div></li>
-							<li><img src="<s:url value='/Resource/images/msg.png'/>" alt=""><p>Email: <span class="yellow1"><a href="#">info(at)skokov.com</a></span></p><div class="clear"></div></li>
-					   </ul>
-					</div>
-			    </div>
-				<div class="clear"></div>				
-		    </div>
-		</div>
-     </div>
+     <div class="page-not-found">
+		<h3>404</h3>
+		<h4><span><img src="<s:url value='/Resource/images/404.png'/>" alt=""/></span></h4>
+		<a href="MainMenu.web" class="home">Back to homepage</a> 
+		<!--  <div class="or">or</div>
+		<a href="blog.html" class="blogpage">Our Blog</a>
+		-->
+	    <div class="clear"></div>
+	</div>
   </div>	
   <div class="footer">
 	<div class="footer-top">
@@ -110,18 +64,12 @@
 					<h4>Photo Stream</h4>
 					<div class="gallery">
 						<ul>
-							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="<s:url value='/Resource/images/g1.jpg'/>" alt=""/></a></li>
-							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="<s:url value='/Resource/images/g2.jpg'/>" alt=""/></a></li>
-							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="<s:url value='/Resource/images/g3.jpg'/>" alt=""/></a></li>
-							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="<s:url value='/Resource/images/g4.jpg'/>" alt=""/></a></li>
-							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="<s:url value='/Resource/images/g5.jpg'/>" alt=""/></a></li>
-							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="<s:url value='/Resource/images/g6.jpg'/>" alt=""/></a></li>
-							 <div id="small-dialog1" class="mfp-hide">
-								<div class="pop_up">
-								 	<h2>A Sample Photo Stream</h2>
-									<img src="<s:url value='/Resource/images/g_zoom.jpg'/>" alt=""/>
-					  			</div>
-							</div>
+							<li><img src="<s:url value='/Resource/images/g1.jpg'/>" alt=""/></li>
+							<li><img src="<s:url value='/Resource/images/g2.jpg'/>" alt=""/></li>
+							<li><img src="<s:url value='/Resource/images/g3.jpg'/>" alt=""/></li>
+							<li><img src="<s:url value='/Resource/images/g4.jpg'/>" alt=""/></li>
+							<li><img src="<s:url value='/Resource/images/g5.jpg'/>" alt=""/></li>
+							<li><img src="<s:url value='/Resource/images/g6.jpg'/>" alt=""/></li>
 						</ul>
 					</div>
 				</div>

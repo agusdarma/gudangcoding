@@ -5,28 +5,12 @@
 
 <html>
 	<head>
-		<!-- META DATA -->
-		<meta name="decorator" content="home-jakarta-software">
-		<title><s:text name="t.home"/></title>
-	</head>
-
-	<body>
-  <div class="header">	
-      <div class="wrap"> 
-	         <div class="logo">
-				<a href="MainMenu.web"><img src="<s:url value='/Resource/images/logo.png'/>" alt=""/></a>
-			 </div>
-			 <div class="cssmenu">
-				<ul>
-					<li class="active"><a href="MainMenu.web">Home</a></li>
-					<li><a href="Portfolio.web">Portfolio</a></li> 
-					<li><a href="About.web">About Us</a></li> 
-					<li><a href="Contact.web">Contact</a></li>
-				</ul>
-		     </div>
-		    <div class="clear"></div>
-	   </div>
-   </div>
+<%-- HEADER --%>
+<%@ include file="/WEB-INF/includes/include_header_jack_soft.jsp"%>
+<title><s:text name="t.home"/></title>		
+</head>
+<body>
+  <%@ include file="/WEB-INF/includes/include_menu_top_jack_soft.jsp"%>
    <div class="index-banner">
        	 <div class="wmuSlider example1">
 			   <div class="wmuSliderWrapper">
@@ -39,7 +23,7 @@
 								<p class="middle">and should be provided with</p>
 								<p class="bottom">the appropriate quality</p>
 							<button class="btn btn-8 btn-8b"><a class="popup-with-zoom-anim" href="#small-dialog">Order Now</a></button>
-						   <!-- start magnific-->
+						   <%-- start magnific--%>
 								<div id="small-dialog" class="mfp-hide">
 					                           	    <div class="plans_table">
   			 	
@@ -112,7 +96,7 @@
 												</tbody></table>  			 	
   											 </div>
 												</div>
-									<!-- end magnific-->
+									<%-- end magnific--%>
 						 </div>
 						 <div class="slider-right">
 						    <img src="<s:url value='/Resource/images/banner-left.png'/>" /> 
@@ -194,15 +178,13 @@
                 	<li><a href="#">4</a></li>
                   </ul>
         </div>
-            	 <!--<script src="js/jquery.wmuSlider.js"></script> 
-				 <script type="text/javascript" src="js/modernizr.custom.min.js"></script> 
+            	 <script src="<s:url value='/Java Script/jakartasoftware/jquery.wmuSlider.js'/>"></script> 
+				 <script type="text/javascript" src="<s:url value='/Java Script/jakartasoftware/modernizr.custom.min.js'/>"></script> 
 						<script>
        						 $('.example1').wmuSlider();         
-   						</script>
-   				-->
-   				           	      
+   						</script> 	           	      
    </div>
-				<!---//End-da-slider----->
+				<%---//End-da-slider-----%>
   <div class="main">
 	 <div class="content-top">
 		 <div class="wrap">
@@ -252,7 +234,7 @@
       <div id="container">
         <div id="main1">
        <ul id="tiles">
-        <!-- These are our grid blocks -->
+        <%-- These are our grid blocks --%>
         <li>
           <a href="<s:url value='/Resource/images/t-pic1.jpg'/>" rel="lightbox" class="cboxElement">
             <img src="<s:url value='/Resource/images/pic1.jpg'/>" width="200" height="283">
@@ -361,6 +343,31 @@
      </ul>
    </div> 
   </div>
+  <%-- Once the page is loaded, initalize the plug-in. --%>
+  <script type="text/javascript">
+    (function ($){
+      $('#tiles').imagesLoaded(function() {
+        // Prepare layout options.
+        var options = {
+          autoResize: true, // This will auto-update the layout when the browser window is resized.
+          container: $('#main1'), // Optional, used for some extra CSS styling
+          offset: 2, // Optional, the distance between grid items
+          itemWidth:200 // Optional, the width of a grid item
+        };
+
+        // Get a reference to your grid items.
+        var handler = $('#tiles li');
+
+        // Call the layout function.
+        handler.wookmark(options);
+
+        // Init lightbox
+        $('a', handler).colorbox({
+          rel: 'lightbox'
+        });
+      });
+    })(jQuery);
+  </script>
 </div>
    <div class="content-bottom">
 		<h2><span>Our Clients</span></h2>  
@@ -375,55 +382,8 @@
 			<li><img src="<s:url value='/Resource/images/client7.jpg'/>" /></li>
 			<li><img src="<s:url value='/Resource/images/client8.jpg'/>" /></li>
 		</ul>
-		<!--  
-	<script type="text/javascript">
-$(window).load(function() {
-	$("#flexiselDemo1").flexisel();
-	$("#flexiselDemo2").flexisel({
-		enableResponsiveBreakpoints: true,
-    	responsiveBreakpoints: { 
-    		portrait: { 
-    			changePoint:480,
-    			visibleItems: 1
-    		}, 
-    		landscape: { 
-    			changePoint:640,
-    			visibleItems: 2
-    		},
-    		tablet: { 
-    			changePoint:768,
-    			visibleItems: 3
-    		}
-    	}
-    });
+	
 
-	$("#flexiselDemo3").flexisel({
-		visibleItems: 5,
-		animationSpeed: 1000,
-		autoPlay: true,
-		autoPlaySpeed: 3000,    		
-		pauseOnHover: true,
-		enableResponsiveBreakpoints: true,
-    	responsiveBreakpoints: { 
-    		portrait: { 
-    			changePoint:480,
-    			visibleItems: 1
-    		}, 
-    		landscape: { 
-    			changePoint:640,
-    			visibleItems: 2
-    		},
-    		tablet: { 
-    			changePoint:768,
-    			visibleItems: 3
-    		}
-    	}
-    });
-    
-});
-</script>
-<script type="text/javascript" src="js/jquery.flexisel.js"></script>
--->
 </div>
 </div>	
   <div class="footer">
@@ -501,7 +461,7 @@ $(window).load(function() {
 			</div>
 	  </div>
 	 </div>
-	 
+	 <%@ include file="/WEB-INF/includes/include_menu_bottom_jack_soft.jsp"%>
 </div>
 </body>
 </html>
