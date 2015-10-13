@@ -24,7 +24,7 @@ public class VersionData {
 	private String buildDate;
 	
 	public VersionData() {
-		appsName = "MMBS eMobile Web Apps";
+		appsName = "PT Jakarta Software Web Apps";
 		version = "1.0.0";
 		SimpleDateFormat sdf = new SimpleDateFormat("dd MMMM yyyy, HH:mm");
 		
@@ -37,7 +37,7 @@ public class VersionData {
 				Manifest manifest = new Manifest(resources.nextElement().openStream());
 				Attributes attrib = manifest.getMainAttributes();
 				String vendorId = attrib.getValue("Implementation-Vendor-Id");
-				if ("com.emobile".equals(vendorId)) {
+				if ("com.jakarta.software".equals(vendorId)) {
 					buildNumber = attrib.getValue("Implementation-Build");
 					String timestamp = attrib.getValue("Implementation-Timestamp");
 					if (timestamp != null && !timestamp.equals("")) {

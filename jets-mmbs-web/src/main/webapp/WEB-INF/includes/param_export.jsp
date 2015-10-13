@@ -1,1 +1,0 @@
-					<s:hidden name="exportType" id="exportType" />
