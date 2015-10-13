@@ -6,6 +6,9 @@
 <struts>
 
 	<package name="mmbs-main" extends="mmbs-base"> 
+	    <action name="PreLaunch" class="com.jakarta.software.web.action.PaperLaunchAction">
+            <result name="input">/WEB-INF/pages/jakartasoftware/paperlaunch.jsp</result>
+        </action>
 	    
 	    <action name="MainMenu" class="com.jakarta.software.web.action.MainMenuAction">
             <result name="input">/WEB-INF/pages/jakartasoftware/main_menu.jsp</result>

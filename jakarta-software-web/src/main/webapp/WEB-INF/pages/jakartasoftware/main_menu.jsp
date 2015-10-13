@@ -22,81 +22,7 @@
 							<p class="top">Any Creative Project is Unique</p>
 								<p class="middle">and should be provided with</p>
 								<p class="bottom">the appropriate quality</p>
-							<button class="btn btn-8 btn-8b"><a class="popup-with-zoom-anim" href="#small-dialog">Order Now</a></button>
-						   <%-- start magnific--%>
-								<div id="small-dialog" class="mfp-hide">
-					                           	    <div class="plans_table">
-  			 	
-								  			 	<table width="100%" cellspacing="0" class="compare_plan">
-												<thead>
-								   					<tr>
-								        				<th class="plans-list"><h3>Plan Features</h3></th>
-								        				<th class="plans-list"><h3>Basic</h3><h4>$5<small>/month</small></h4></th>
-								        				<th class="plans-list"><h3>Economy</h3><h4>$9<small>/month</small></h4></th>
-								    				</tr>
-												</thead>
-													<tfoot>
-									    			<tr>
-												        <td> </td>
-								        				<td class="order_now"><a href="#account" class="scroll"><button>Order Now</button></a></td>
-								        				<td class="order_now"><a href="#account" class="scroll"><button>Order Now</button></a></td>
-													</tr>
-													</tfoot>				
-								   				<tbody>
-								   					<tr>
-									        			<td class="plan_list_title">Web Space</td>
-												        <td class="price_body">Unlimited</td>
-												        <td class="price_body">Unlimited</td>
-									    			</tr>
-								    				<tr>
-								        				<td class="plan_list_title">Bandwidth</td>
-														<td class="price_body">Unlimited</td>
-										        		<td class="price_body">Unlimited</td>
-								    				</tr>
-								    				<tr>
-								        				<td class="plan_list_title">25 GB Storage</td>
-											    	    <td class="price_body"><img src="<s:url value='/Resource/images/icon-remove.png'/>" alt="img"></td>
-											        	<td class="price_body">Unlimited</td>
-													</tr>
-								    				<tr>
-											    	    <td class="plan_list_title">iPhone App</td>
-											        	<td class="price_body"><img src="<s:url value='/Resource/images/icon-remove.png'/>" alt="img"></td>
-												        <td class="price_body">Unlimited</td>
-								    				</tr>
-								    				<tr>
-								        				<td class="plan_list_title">Enhanced Security</td>
-									        			<td class="price_body"><img src="<s:url value='/Resource/images/tickmark-icon.png'/>" alt="img"></td>
-												        <td class="price_body"><img src="<s:url value='/Resource/images/tickmark-icon.png'/>" alt="img"></td>
-								    				</tr>
-									    			<tr>
-								    	    			<td class="plan_list_title">E-mail</td>
-								        				<td class="price_body"><img src="<s:url value='/Resource/images/tickmark-icon.png'/>" alt="img"></td>
-												        <td class="price_body"><img src="<s:url value='/Resource/images/tickmark-icon.png'/>" alt="img"></td>
-									    			</tr>
-								    				<tr>
-								        				<td class="plan_list_title">Wordpress Support</td>
-												        <td class="price_body"><img src="<s:url value='/Resource/images/icon-remove.png'/>" alt="img"></td>
-											    	    <td class="price_body"><img src="<s:url value='/Resource/images/tickmark-icon.png'/>" alt="img"></td>
-								    				</tr>
-								    				<tr>
-								        				<td class="plan_list_title">24/7 Support</td>
-								        				<td class="price_body"><img src="<s:url value='/Resource/images/tickmark-icon.png'/>" alt="img"></td>
-											        	<td class="price_body"><img src="<s:url value='/Resource/images/tickmark-icon.png'/>" alt="img"></td>
-								    				</tr>
-								    				<tr>
-								        				<td class="plan_list_title">Backups</td>
-												    	<td class="price_body"><img src="<s:url value='/Resource/images/tickmark-icon.png'/>" alt="img"></td>
-												        <td class="price_body"><img src="<s:url value='/Resource/images/tickmark-icon.png'/>" alt="img"></td>
-								    				</tr>
-								    				<tr>
-								        				<td class="plan_list_title">Dedicated IP</td>
-												        <td class="price_body">$2/mo</td>
-												        <td class="price_body">$2/mo</td>
-								    				</tr>
-												</tbody></table>  			 	
-  											 </div>
-												</div>
-									<%-- end magnific--%>
+							<button class="btn btn-8 btn-8b"><a class="popup-with-zoom-anim" href="#small-dialog">Order Now</a></button>						   
 						 </div>
 						 <div class="slider-right">
 						    <img src="<s:url value='/Resource/images/banner-left.png'/>" /> 
@@ -178,8 +104,8 @@
                 	<li><a href="#">4</a></li>
                   </ul>
         </div>
-            	 <script src="<s:url value='/Java Script/jakartasoftware/jquery.wmuSlider.js'/>"></script> 
-				 <script type="text/javascript" src="<s:url value='/Java Script/jakartasoftware/modernizr.custom.min.js'/>"></script> 
+            	 
+				 
 						<script>
        						 $('.example1').wmuSlider();         
    						</script> 	           	      

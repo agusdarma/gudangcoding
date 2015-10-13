@@ -34,6 +34,8 @@
 <%-- Include the plug-in --%>
 <script src="<s:url value='/Java Script/jakartasoftware/jquery.wookmark.js'/>"></script>
 <script type="text/javascript" src="<s:url value='/Java Script/jakartasoftware/jquery.flexisel.js'/>"></script>
+<script src="<s:url value='/Java Script/jakartasoftware/jquery.wmuSlider.js'/>"></script> 
+<script type="text/javascript" src="<s:url value='/Java Script/jakartasoftware/modernizr.custom.min.js'/>"></script> 
 
 <script>
 	$(document).ready(function() {
