@@ -3,6 +3,10 @@ package com.jakarta.software.web.service;
 public class MmbsWebException extends Exception {
 	private static final long serialVersionUID = 1L;
 	
+	
+	public static final int NE_SENDING_EMAIL_FAILED	= 100;
+	
+	
 	public static final int NE_ENGINE_ERROR_MSG 	= 99998;
 	public static final int NE_UNKNOWN_ERROR		= 99999;
 	
