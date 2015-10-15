@@ -340,9 +340,9 @@
 					<h3>About Us</h3>
 					<p>JackSoft is a leading provider of business application solutions and software-related services  in Indonesia. We focus on developing innovations and providing customer-oriented solutions to help companies of all sizes and industries achieve their business goals.
 					Established in 2015, JackSoft was founded on the passion to combine management and IT</p>
-					<button class="btn1 btn-8 btn-8b">Learn more</button>
-					<h4>Photo Stream</h4>
-					<div class="gallery">
+					<a href="About.web"><button class="btn1 btn-8 btn-8b">Learn more</button></a>
+					<%--<h4>Photo Stream</h4>
+					 <div class="gallery">
 						<ul>
 							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="<s:url value='/Resource/images/g1.jpg'/>" alt=""/></a></li>
 							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="<s:url value='/Resource/images/g2.jpg'/>" alt=""/></a></li>
@@ -358,9 +358,10 @@
 							</div>
 						</ul>
 					</div>
+					--%>
 				</div>
 				<div class="col_1_of_3 span_1_of_3">
-					<h3>Latest tweets</h3>
+					<%--<h3>Latest tweets</h3>
 					<div class="footer-list">
 						<ul>
 							<li><img src="<s:url value='/Resource/images/tw.png'/>" alt=""/><p>Lorem ipsum <span class="yellow"><a href="#">consectetuer</a></span> adipiscing elit, seddia<br><span class="small">&nbsp;web design</span></p><div class="clear"></div></li>
@@ -370,6 +371,7 @@
 							<li><img src="<s:url value='/Resource/images/tw.png'/>" alt=""/><p>Lorem ipsum <span class="yellow"><a href="#">consectetuer</a></span> adipiscing elit, seddia<br><span class="small">&nbsp;web design</span></p><div class="clear"></div></li>
 						</ul>
 					</div>
+					--%>
 					 <div class="social-icons">	
 					 	<h4>Social Connecting</h4>
 						    <ul>	
