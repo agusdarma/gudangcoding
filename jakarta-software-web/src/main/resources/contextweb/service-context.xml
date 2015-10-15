@@ -16,7 +16,7 @@
 	<context:component-scan base-package="com.jakarta.software.web.service" />
 	
 	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-		<property name="basename" value="mmbs-web" />
+		<property name="basename" value="jakarta-software-web" />
 	</bean>
 	
 	<bean id="httpClientService" class="com.jakarta.software.web.service.HttpClientService" init-method="start" destroy-method="stop">
@@ -28,16 +28,16 @@
 	    <property name="encryptionKey" value="${engine.encryptionKey}" />
 	</bean>	
 	<bean id="emailSenderService" class="com.jakarta.software.web.service.EmailSenderService" >
-		<property name="smtpHost" value="smtp-mnet.biz.net.id" />
-		<property name="smtpPort" value="25" />
-		<property name="smtpUserName" value="tri.harnanto@emobile.com.sg" />
-		<property name="smtpPassword" value="embadmin" />
-		<property name="useTLS" value="false" />
-		<property name="useSSL" value="false" />
-		<property name="defaultFrom" value="tri.harnanto@emobile.com.sg" />
+		<property name="smtpHost" value="${smtpHost}" /> 
+		<property name="smtpPort" value="${smtpPort}" />
+		<property name="smtpUserName" value="${smtpUserName}" />
+		<property name="smtpPassword" value="${smtpPassword}" />
+		<property name="useTLS" value="${useTLS}" />
+		<property name="useSSL" value="${useSSL}" />
+		<property name="defaultFrom" value="${defaultFrom}" />
 	</bean>
 
-	<bean id="emailSenderServiceGmail" class="com.jakarta.software.web.service.EmailSenderService" >
+	<!--  <bean id="emailSenderServiceGmail" class="com.jakarta.software.web.service.EmailSenderService" >
 		<property name="smtpHost" value="smtp.gmail.com" />
 		<property name="smtpPort" value="465" />
 		<property name="smtpUserName" value="decimonoloki@gmail.com" />
@@ -46,6 +46,7 @@
 		<property name="useSSL" value="false" />
 		<property name="defaultFrom" value="decimonoloki@gmail.com" />
 	</bean>
+	-->
 		
 		
 	<bean id="versionData" class="com.jakarta.software.web.data.VersionData" init-method="printInfo" />

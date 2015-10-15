@@ -22,8 +22,10 @@
             <result name="input">/WEB-INF/pages/jakartasoftware/about.jsp</result>
         </action>	
         
-        <action name="Contact" class="com.jakarta.software.web.action.ContactAction">
+        <action name="Contact!*" method="{1}" class="com.jakarta.software.web.action.ContactAction">
+            <interceptor-ref name="webStack" />
             <result name="input">/WEB-INF/pages/jakartasoftware/contact.jsp</result>
+            <result name="success">/WEB-INF/pages/jakartasoftware/contact.jsp</result>
         </action>	
 	
 		<action name="Login!*" method="{1}" class="com.jakarta.software.web.action.LoginAction">

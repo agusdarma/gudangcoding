@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<web-app id="mmbs-web-product" version="2.4" 
+<web-app id="jakarta-software-web-product" version="2.4" 
          xmlns="http://java.sun.com/xml/ns/j2ee" 
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
@@ -11,7 +11,7 @@
 	
 	<context-param>
 		<param-name>webAppRootKey</param-name>
-		<param-value>mmbs-web.root</param-value>
+		<param-value>jakarta-software-web.root</param-value>
 	</context-param>
 	
 	<context-param>
@@ -111,5 +111,10 @@
     	<location>/WEB-INF/pages/jakartasoftware/404.jsp</location>
   	</error-page>
   	-->
+  	
+  	<error-page>
+   		<exception-type>404</exception-type>
+   		<location>/WEB-INF/pages/jakartasoftware/404.jsp</location>
+	</error-page>
 
 </web-app>

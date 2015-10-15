@@ -11,22 +11,20 @@
     	</result-types>
     	
 		<interceptors>
-			<!--  <interceptor name="securityCheck"
+			<interceptor name="securityCheck"
 				class="com.jakarta.software.web.interceptor.SecurityInterceptor" />
 			<interceptor name="jmesaPaging" 
-				class="com.jakarta.software.web.interceptor.JMesaPagingInterceptor" />
-			-->
+				class="com.jakarta.software.web.interceptor.JMesaPagingInterceptor" />			
 			
 			<interceptor-stack name="webStack">
 				<interceptor-ref name="basicStack" />
 			</interceptor-stack>
 
 			<interceptor-stack name="webSecureStack">
-				<!--  <interceptor-ref name="securityCheck" />
+				<interceptor-ref name="securityCheck" />
 				<interceptor-ref name="fileUpload" />
                 <interceptor-ref name="i18nStack" />
-                <interceptor-ref name="jmesaPaging" />
-                -->
+                <interceptor-ref name="jmesaPaging" />                
 			</interceptor-stack>
 		</interceptors>
 
@@ -51,9 +49,11 @@
 		</global-exception-mappings>
 		-->
 		
+		<!--
 		<action name="*">
             <result>/WEB-INF/pages/jakartasoftware/404.jsp</result>
         </action>
+        -->
         
 		
 	</package>

@@ -7,7 +7,7 @@
 	<head>
 <%-- HEADER --%>
 <%@ include file="/WEB-INF/includes/include_header_jack_soft.jsp"%>
-<title><s:text name="t.home"/></title>		
+<title><s:text name="t.about"/></title>		
 </head>
 <body>
   <%@ include file="/WEB-INF/includes/include_menu_top_jack_soft.jsp"%>
@@ -36,7 +36,7 @@
 						passion to combine management and IT</p>
 		 				</div>
 						<div class="col_1_of_2 span_1_of_2">
-						   <p>JackSoft is founded by young men who meet each other in PT eMobile Indonesia IT division where they handle important project. From there
+						   <p>JackSoft is founded by young men who meet each other in Software House Company IT division where they handle important project. From there
 						   they see needs Indonesia IT industry. JackSoft concentrating in web application ( JAVA ) and mobile application ( Android and IOS )</p>
 						</div>
 						<div class="clear"></div>	

@@ -1,9 +1,9 @@
-<meta name="application-name" content="PT Jakarta Software" />
-<meta name="description" content="PT Jakarta Software provides desktop application, mobile solutions, web application." />
-<meta name="keywords" content="PT Jakarta Software, Desktop Application, Mobile Application, Android, Iphone, Apple, Web Application" />
-<meta name="author" content="PT Jakarta Software" />
-<meta name="designer" content="PT Jakarta Software" />
-<meta name="copyright" content="Copyright 2015 PT Jakarta Software" />
+<meta name="application-name" content="Jakarta Software" />
+<meta name="description" content="Jakarta Software provides desktop application, mobile solutions, web application." />
+<meta name="keywords" content="Jakarta Software, Desktop Application, Mobile Application, Android, Iphone, Apple, Web Application" />
+<meta name="author" content="Jakarta Software" />
+<meta name="designer" content="Jakarta Software" />
+<meta name="copyright" content="Copyright 2015 Jakarta Software" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <%-- FAVICON --%>

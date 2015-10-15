@@ -7,7 +7,7 @@
 	<head>
 <%-- HEADER --%>
 <%@ include file="/WEB-INF/includes/include_header_jack_soft.jsp"%>
-<title><s:text name="t.home"/></title>		
+<title><s:text name="t.portfolio"/></title>		
 </head>
 <body>
   <%@ include file="/WEB-INF/includes/include_menu_top_jack_soft.jsp"%>

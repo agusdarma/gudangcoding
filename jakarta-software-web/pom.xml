@@ -21,7 +21,7 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.emobile</groupId>
+			<groupId>com.jakarta.software</groupId>
 			<artifactId>jakarta-software-data</artifactId>
 			<version>1.0.0</version>
 		</dependency>

@@ -108,7 +108,7 @@
 		<div class="wrap">
 			<div class="copy">
 				<p class="copy">
-					© 2015 PT Jakarta Software Design by <a href="http://w3layouts.com"
+					© 2015 Jakarta Software Design by <a href="http://w3layouts.com"
 						target="_blank">w3layouts</a>
 				</p>
 			</div>
