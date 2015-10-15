@@ -373,16 +373,17 @@
 					</div>
 					--%>
 					 <div class="social-icons">	
-					 	<h4>Social Connecting</h4>
+					 	<h4>Find Us In</h4>
 						    <ul>	
-							  <li class="facebook"><a href="#"><span> </span></a></li>
-					          <li class="google"><a href="#"><span> </span></a></li>
-					          <li class="twitter"><a href="#"><span> </span></a></li>
-					          <li class="linkedin"><a href="#"><span> </span></a></li>	 
+							  <li class="facebook"><a href="https://www.facebook.com/agusdarmakusuma"><span> </span></a></li>
+					          <li class="google"><a href="https://plus.google.com/106023812537181496034"><span> </span></a></li>
+					          <li class="twitter"><a href="https://twitter.com/agus_d4rm4"><span> </span></a></li>
+					          <%--<li class="linkedin"><a href="#"><span> </span></a></li>	 
 					          <li class="youtube"><a href="#"><span> </span></a></li>	
 					          <li class="bloger"><a href="#"><span> </span></a></li>
 					          <li class="rss"><a href="#"><span> </span></a></li>	
-					          <li class="dribble"><a href="#"><span> </span></a></li>		        	
+					          <li class="dribble"><a href="#"><span> </span></a></li>	
+					          --%>	        	
 					        </ul>
 				     </div>
 			    </div>
@@ -395,6 +396,7 @@
 							<li><img src="<s:url value='/Resource/images/msg.png'/>" alt=""/><p>Email: <span class="yellow"><a href="#">info(at)skokov.com</a></span></p><div class="clear"></div></li>
 					   </ul>
 					</div>
+					<%--
 					<div class="follow">
 					   <h4>Follow Us</h4>
 					   <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</p>
@@ -405,6 +407,7 @@
 						  </form>
 					   </div>
 				    </div>
+				    --%>
 				</div>
 				<div class="clear"></div>
 			</div>
