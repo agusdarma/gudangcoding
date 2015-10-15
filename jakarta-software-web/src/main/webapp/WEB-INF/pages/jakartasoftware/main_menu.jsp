@@ -17,15 +17,15 @@
 				   <article style="position: absolute; width: 100%; opacity: 0;"> 
 				   	<div class="banner-wrap">
 					   	<div class="slider-left">
-							<h3>We Believe</h3>
-							<h4>In Quality Design</h4>
-							<p class="top">Any Creative Project is Unique</p>
-								<p class="middle">and should be provided with</p>
-								<p class="bottom">the appropriate quality</p>
-							<button class="btn btn-8 btn-8b"><a class="popup-with-zoom-anim" href="#small-dialog">Order Now</a></button>						   
+							<h3>JackSoft</h3>
+							<h4>help you to</h4>
+							<p class="top">growth business goal</p>
+								<p class="middle">Delivering the updates technology to you</p>
+								<p class="bottom">reducing operation cost with Information Technology</p>
+							<%-- <button class="btn btn-8 btn-8b"><a class="popup-with-zoom-anim" href="#small-dialog">Order Now</a></button>--%>						   
 						 </div>
 						 <div class="slider-right">
-						    <img src="<s:url value='/Resource/images/banner-left.png'/>" /> 
+						    <img src="<s:url value='/Resource/images/slide1.jpg'/>" /> 
 						 </div>
 						 <div class="clear"></div>
 					 </div>
@@ -33,52 +33,54 @@
 				   <article style="position: relative; width: 100%; opacity: 1;"> 
 				   	 <div class="banner-wrap">
 				   	 	 <div class="slider-right">
-						    <img src="<s:url value='/Resource/images/banner-left.png'/>" /> 
+						    <img src="<s:url value='/Resource/images/slide2.jpg'/>" /> 
 						 </div>
 					   	<div class="slider-left">
-							<h3>We Believe</h3>
-							<h4>In Quality Design</h4>
-							<p class="top">Any Creative Project is Unique</p>
-								<p class="middle">and should be provided with</p>
+							<h3>JackSoft</h3>
+							<h4>Commited to</h4>
+							<p class="top">delivery customer satisfaction</p>
+								<%-- <p class="middle">and should be provided with</p>
 								<p class="bottom">the appropriate quality</p>
 							<button class="btn btn-8 btn-8b"><a class="popup-with-zoom-anim" href="#small-dialog">Order Now</a></button>
+							--%>
 						 </div>
 						<div class="clear"></div>
 					 </div>
 				   </article>
-				   <article style="position: absolute; width: 100%; opacity: 0;">
+				   <%-- <article style="position: absolute; width: 100%; opacity: 0;">
 				   	<div class="banner-wrap">
 					   	<div class="slider-left">
-							<h3>We Believe</h3>
-							<h4>In Quality Design</h4>
-							<p class="top">Any Creative Project is Unique</p>
-								<p class="middle">and should be provided with</p>
-								<p class="bottom">the appropriate quality</p>
-							<button class="btn btn-8 btn-8b"><a class="popup-with-zoom-anim" href="#small-dialog">Order Now</a></button>
+							<h3>JackSoft</h3>
+							<h4>Software Company</h4>
+							<p class="top">kepuasan pelanggan</p>
+								<p class="middle">menjadi</p>
+								<p class="bottom">prioritas kami</p>
+							<button class="btn btn-8 btn-8b"><a class="popup-with-zoom-anim" href="#small-dialog">Order Now</a></button>							
 						 </div>
 						<div class="slider-right">
 						    <img src="<s:url value='/Resource/images/banner-left.png'/>" /> 
 						 </div>
 						 <div class="clear"></div>
 					 </div>
-				   </article>
+				   </article>				   
 				   <article style="position: absolute; width: 100%; opacity: 0;">
 				   	<div class="banner-wrap">
 				   		<div class="slider-right">
 						    <img src="<s:url value='/Resource/images/banner-left.png'/>" /> 
 						 </div>
 					   	<div class="slider-left">
-							<h3>We Believe</h3>
-							<h4>In Quality Design</h4>
-							<p class="top">Any Creative Project is Unique</p>
-								<p class="middle">and should be provided with</p>
-								<p class="bottom">the appropriate quality</p>
+							<h3>Kerja keras </h3>
+							<h4>adalah budaya kami</h4>
+							<p class="top">tidak pernah berhenti untuk terus belajar dan belajar</p>
+								<p class="middle">membuat kami akan terus bertumbuh</p>
+								<p class="bottom">bersama usaha anda</p>
 							<button class="btn btn-8 btn-8b"><a class="popup-with-zoom-anim" href="#small-dialog">Order Now</a></button>
 						 </div>
 						 <div class="clear"></div>
 					 </div>
 				   </article>
-				   <article style="position: absolute; width: 100%; opacity: 0;"> 
+				   --%>
+				   <%-- <article style="position: absolute; width: 100%; opacity: 0;"> 
 				   		<div class="banner-wrap">
 					   	<div class="slider-left">
 							<h3>We Believe</h3>
@@ -94,14 +96,15 @@
 						 <div class="clear"></div>
 					 </div>
 			      </article>
+			      --%>
 				</div>
                 <a class="wmuSliderPrev">Previous</a><a class="wmuSliderNext">Next</a>
                 <ul class="wmuSliderPagination">
                 	<li><a href="#" class="">0</a></li>
                 	<li><a href="#" class="">1</a></li>
-                	<li><a href="#" class="wmuActive">2</a></li>
+                	<%--<li><a href="#" class="wmuActive">2</a></li>
                 	<li><a href="#">3</a></li>
-                	<li><a href="#">4</a></li>
+                	<li><a href="#">4</a></li>--%>
                   </ul>
         </div>
             	 
@@ -114,53 +117,68 @@
   <div class="main">
 	 <div class="content-top">
 		 <div class="wrap">
-			<h3>We Creative Quality Designs.</h3>
-			<h5>We Specialize in Web Design / Development and Graphic Design</h5>
+			<h3>Why you must choose JackSoft.</h3>
+			<h5>We Specialize in Development</h5>
 			<div class="section group">
-				<div class="col_1_of_4 span_1_of_first">
+				<%--<div class="col_1_of_4 span_1_of_first">
 					<img src="<s:url value='/Resource/images/pic.jpg'/>" alt=""/>
 					<div class="desc">
-					   <h4>Redesigning<br> with personality<br><span>in<span class="small">&nbsp;web design</span></span><div class="clear"></div></h4>
+					   <h4>Redesigning<br> with your company personality<br><span>in<span class="small">&nbsp;web development</span></span><div class="clear"></div></h4>
 					</div> 
 				</div>
+				--%>
 				<div class="col_1_of_4 span_1_of_4">
 					<div class="grid1">
 						<img src="<s:url value='/Resource/images/icon1.png'/>" alt=""/>
 						<h4>Web development</h4>
 					</div>
-					<div class="desc">
-					   <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</p>
+					<%--<div class="desc">
+					   <p>We use the latest technologies such as java , spring , mybatis for web development . With this technology we are able to handle more transactions guarantee</p>
 					</div> 
+					--%>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
 					<div class="grid1">
 						<img src="<s:url value='/Resource/images/icon2.png'/>" alt=""/>
-						<h4>Web design</h4>
+						<h4>Android development</h4>
 					</div>
-					<div class="desc">
+					<%--<div class="desc">
 					   <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</p>
 					</div> 
+					--%>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
 					<div class="grid1">
 						<img src="<s:url value='/Resource/images/icon3.png'/>" alt=""/>
-						<h4>Graphic design</h4>
+						<h4>Ios development</h4>
 					</div>
-					<div class="desc">
+					<%--<div class="desc">
 					   <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</p>
 					</div> 
+					--%>
+				</div>
+				<div class="col_1_of_4 span_1_of_4">
+					<div class="grid1">
+						<img src="<s:url value='/Resource/images/icon1.png'/>" alt=""/>
+						<h4>Custom development</h4>
+					</div>
+					<%--<div class="desc">
+					   <p>We use the latest technologies such as java , spring , mybatis for web development . With this technology we are able to handle more transactions guarantee</p>
+					</div> 
+					--%>
 				</div>
 				<div class="clear"></div>
 			</div>
 		</div>
 	</div>
+	<%--
 	<div class="content-middle">
 		<h2><span>Our work</span></h2>
 		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</p>
       <div id="container">
         <div id="main1">
        <ul id="tiles">
-        <%-- These are our grid blocks --%>
+       
         <li>
           <a href="<s:url value='/Resource/images/t-pic1.jpg'/>" rel="lightbox" class="cboxElement">
             <img src="<s:url value='/Resource/images/pic1.jpg'/>" width="200" height="283">
@@ -269,7 +287,7 @@
      </ul>
    </div> 
   </div>
-  <%-- Once the page is loaded, initalize the plug-in. --%>
+  
   <script type="text/javascript">
     (function ($){
       $('#tiles').imagesLoaded(function() {
@@ -295,6 +313,7 @@
     })(jQuery);
   </script>
 </div>
+
    <div class="content-bottom">
 		<h2><span>Our Clients</span></h2>  
 		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</p>     
@@ -311,6 +330,7 @@
 	
 
 </div>
+--%>
 </div>	
   <div class="footer">
 	<div class="footer-top">
@@ -318,7 +338,8 @@
 		   <div class="section group">
 				<div class="col_1_of_3 span_1_of_3">
 					<h3>About Us</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+					<p>JackSoft is a leading provider of business application solutions and software-related services  in Indonesia. We focus on developing innovations and providing customer-oriented solutions to help companies of all sizes and industries achieve their business goals.
+					Established in 2015, JackSoft was founded on the passion to combine management and IT</p>
 					<button class="btn1 btn-8 btn-8b">Learn more</button>
 					<h4>Photo Stream</h4>
 					<div class="gallery">
