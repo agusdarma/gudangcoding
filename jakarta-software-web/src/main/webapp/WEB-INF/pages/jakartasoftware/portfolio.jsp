@@ -10,22 +10,7 @@
 <title><s:text name="t.home"/></title>		
 </head>
 <body>
-  <div class="header">	
-      <div class="wrap"> 
-	         <div class="logo">
-				<a href="MainMenu.web"><img src="<s:url value='/Resource/images/logo.png'/>" alt=""/></a>
-			 </div>
-			 <div class="cssmenu">
-				<ul>
-					<li class="active"><a href="MainMenu.web">Home</a></li>
-					<li><a href="Portfolio.web">Portfolio</a></li> 
-					<li><a href="About.web">About Us</a></li> 
-					<li><a href="Contact.web">Contact</a></li>
-				</ul>
-		     </div>
-		    <div class="clear"></div>
-	   </div>
-  </div>
+  <%@ include file="/WEB-INF/includes/include_menu_top_jack_soft.jsp"%>
     <div class="banner">
       	<div class="wrap">
       	    <h2>Portfolio</h2> <div class="clear"></div>
@@ -52,7 +37,7 @@
 			<div class="wrapper">
 			<div class="portfolio logo1 mix_all" data-cat="logo" style=" ">
 				<div class="portfolio-wrapper">				
-					<a href="project.html">
+					<a href="#">
 						<img src="<s:url value='/Resource/images/pic12.jpg'/>" alt="Image 2">
 					</a>
 					<div class="links">
@@ -65,7 +50,7 @@
 			</div>				
 			<div class="portfolio app mix_all" data-cat="app" style="  display: inline-block; opacity: 1;">
 				<div class="portfolio-wrapper">			
-					<a href="project.html">
+					<a href="#">
 						<img src="<s:url value='/Resource/images/pic13.jpg'/>" alt="Image 2">
 					</a>
 					<div class="links">
@@ -78,7 +63,7 @@
 			</div>		
 			<div class="portfolio web mix_all" data-cat="web" style="  display: inline-block; opacity: 1;">
 				<div class="portfolio-wrapper">						
-					<a href="project.html">
+					<a href="#">
 						<img src="<s:url value='/Resource/images/pic14.jpg'/>" alt="Image 2">
 					</a>
 					<div class="links">
@@ -91,7 +76,7 @@
 			</div>				
 			<div class="portfolio card mix_all" data-cat="card" style="  display: inline-block; opacity: 1;">
 				<div class="portfolio-wrapper">			
-					<a href="project.html">
+					<a href="#">
 						<img src="<s:url value='/Resource/images/pic15.jpg'/>" alt="Image 2">
 					</a>
 					<div class="links">
@@ -104,7 +89,7 @@
 			</div>	
 			<div class="portfolio app mix_all" data-cat="app" style="  display: inline-block; opacity: 1;">
 				<div class="portfolio-wrapper">
-					<a href="project.html">
+					<a href="#">
 						<img src="<s:url value='/Resource/images/pic16.jpg'/>" alt="Image 2">
 					</a>
 					<div class="links">
@@ -117,7 +102,7 @@
 			</div>			
 			<div class="portfolio card mix_all" data-cat="card" style="  display: inline-block; opacity: 1;">
 				<div class="portfolio-wrapper">			
-					<a href="project.html">
+					<a href="#">
 						<img src="<s:url value='/Resource/images/pic17.jpg'/>" alt="Image 2">
 					</a>
 					<div class="links">
@@ -130,7 +115,7 @@
 			</div>	
 			<div class="portfolio card mix_all" data-cat="card" style="  display: inline-block; opacity: 1;">
 				<div class="portfolio-wrapper">			
-					<a href="project.html">
+					<a href="#">
 						<img src="<s:url value='/Resource/images/pic18.jpg'/>" alt="Image 2">
 					</a>
 					<div class="links">
@@ -143,7 +128,7 @@
 			</div>	
 			<div class="portfolio logo1 mix_all" data-cat="logo" style=" ">
 				<div class="portfolio-wrapper">			
-					<a href="project.html">
+					<a href="#">
 						<img src="<s:url value='/Resource/images/pic19.jpg'/>" alt="Image 2">
 					</a>
 					<div class="links">
@@ -156,7 +141,7 @@
 			</div>																																							
 			<div class="portfolio app mix_all" data-cat="app" style="  display: inline-block; opacity: 1;">
 				<div class="portfolio-wrapper">			
-					<a href="project.html">
+					<a href="#">
 						<img src="<s:url value='/Resource/images/pic20.jpg'/>" alt="Image 2">
 					</a>
 					<div class="links">
