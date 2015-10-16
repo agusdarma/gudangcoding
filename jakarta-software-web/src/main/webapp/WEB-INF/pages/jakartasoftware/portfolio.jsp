@@ -49,21 +49,21 @@
 		  			</div>
 				</div>
 			</div>
-							
+			--%>				
 			<div class="portfolio app mix_all" data-cat="app" style="  display: inline-block; opacity: 1;">
 				<div class="portfolio-wrapper">			
 					<a href="#">
-						<img src="<s:url value='/Resource/images/pic13.jpg'/>" alt="Image 2">
+						<img src="<s:url value='/Resource/images/hkm.jpg'/>" alt="Image 2">
 					</a>
 					<div class="links">
-						<h4><a href="">Lorem ipsum dolor sit amet</a></h4><p class="img"><img src="<s:url value='/Resource/images/likes.png'/>"  title="likes" alt=""/>12</p><div class="clear"></div>
+						<h4><a href="">www.hkm-machinery.com perusahaan yang bergerak di bidang molding plastik.</a></h4><div class="clear"></div>
 							<ul>
 				  				<li><a href="#"><span>December 14, 2013</span></a></li>
 				  			</ul>
 		  			</div>
 				</div>
 			</div>
-			--%>		
+					
 			<%-- <div class="portfolio web mix_all" data-cat="web" style="  display: inline-block; opacity: 1;">
 				<div class="portfolio-wrapper">						
 					<a href="#">
@@ -91,20 +91,19 @@
 		  			</div>
 				</div>
 			</div>	
-			<%-- <div class="portfolio app mix_all" data-cat="app" style="  display: inline-block; opacity: 1;">
+			<div class="portfolio app mix_all" data-cat="app" style="  display: inline-block; opacity: 1;">
 				<div class="portfolio-wrapper">
 					<a href="#">
-						<img src="<s:url value='/Resource/images/pic16.jpg'/>" alt="Image 2">
+						<img src="<s:url value='/Resource/images/moon_home.jpg'/>" alt="Image 2">
 					</a>
 					<div class="links">
-						<h4><a href="">Lorem ipsum dolor sit amet</a></h4><p class="img"><img src="<s:url value='/Resource/images/likes.png'/>"  title="likes" alt=""/>12</p><div class="clear"></div>
+						<h4><a href="">www.moonbabyshop.com Baby Shop Online di daerah Metland Puri.</a></h4><div class="clear"></div>
 							<ul>
-				  				<li><a href="#"><span>December 14, 2013</span></a></li>
+				  				<li><a href="#"><span>14 September, 2014</span></a></li>
 				  			</ul>
 		  			</div>
 				</div>
-			</div>
-			--%>			
+			</div>					
 			<div class="portfolio card mix_all" data-cat="card" style="  display: inline-block; opacity: 1;">
 				<div class="portfolio-wrapper">			
 					<a href="#">
