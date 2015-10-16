@@ -1,2 +1,2 @@
 
-<% response.sendRedirect("PreLaunch.web"); %>
+<% response.sendRedirect("MainMenu.web"); %>

@@ -19,23 +19,24 @@
 	<div class="main">	
 	   <div class="portfolio-top">
 		   	<div class="wrap">
-		        <h3>We Creative Quality Designs.</h3>
-				<h5>We Specialize in Web Design / Development and Graphic Design</h5>
+		        <h3>We build with love and passion</h3>
+				<h5>This is JackSoft Portfolio</h5>
 			</div>
 		</div>
 		<div class="container">
 		   <ul id="filters" class="clearfix">
 				 <li><span class="filter active" data-filter="app card icon logo web">All</span></li>
 				 <li><span class="filter" data-filter="app">Website</span></li>
-				 <li><span class="filter" data-filter="card">Logo</span></li>
-				 <li><span class="filter" data-filter="icon">UI Kit</span></li>
+				 <li><span class="filter" data-filter="card">Mobile</span></li>
+				 <%-- <li><span class="filter" data-filter="icon">UI Kit</span></li>
 				 <li><span class="filter" data-filter="logo">Photo</span></li>
 				 <li><span class="filter" data-filter="web">App Design</span></li>
+				 --%>
 		   </ul>
 		   <div class="clear"></div>
 		   <div id="portfoliolist" style="     " class="">
 			<div class="wrapper">
-			<div class="portfolio logo1 mix_all" data-cat="logo" style=" ">
+			<%-- <div class="portfolio logo1 mix_all" data-cat="logo" style=" ">
 				<div class="portfolio-wrapper">				
 					<a href="#">
 						<img src="<s:url value='/Resource/images/pic12.jpg'/>" alt="Image 2">
@@ -47,7 +48,8 @@
 				  		   </ul>
 		  			</div>
 				</div>
-			</div>				
+			</div>
+							
 			<div class="portfolio app mix_all" data-cat="app" style="  display: inline-block; opacity: 1;">
 				<div class="portfolio-wrapper">			
 					<a href="#">
@@ -60,8 +62,9 @@
 				  			</ul>
 		  			</div>
 				</div>
-			</div>		
-			<div class="portfolio web mix_all" data-cat="web" style="  display: inline-block; opacity: 1;">
+			</div>
+			--%>		
+			<%-- <div class="portfolio web mix_all" data-cat="web" style="  display: inline-block; opacity: 1;">
 				<div class="portfolio-wrapper">						
 					<a href="#">
 						<img src="<s:url value='/Resource/images/pic14.jpg'/>" alt="Image 2">
@@ -73,21 +76,22 @@
 				  			</ul>
 		  			</div>
 				</div>
-			</div>				
+			</div>
+			--%>				
 			<div class="portfolio card mix_all" data-cat="card" style="  display: inline-block; opacity: 1;">
 				<div class="portfolio-wrapper">			
 					<a href="#">
-						<img src="<s:url value='/Resource/images/pic15.jpg'/>" alt="Image 2">
+						<img src="<s:url value='/Resource/images/p2_online.jpg'/>" alt="Parking Online">
 					</a>
 					<div class="links">
-						<h4><a href="">Lorem ipsum dolor sit amet</a></h4><p class="img"><img src="<s:url value='/Resource/images/likes.png'/>"  title="likes" alt=""/>12</p><div class="clear"></div>
+						<h4><a href="">Parking Online Solution, solusi mudah cari parkir jaman sekarang</a></h4><div class="clear"></div>
 							<ul>
-				  				<li><a href="#"><span>December 14, 2013</span></a></li>
+				  				<li><a href="#"><span>15 September 2015</span></a></li>
 				  			</ul>
 		  			</div>
 				</div>
 			</div>	
-			<div class="portfolio app mix_all" data-cat="app" style="  display: inline-block; opacity: 1;">
+			<%-- <div class="portfolio app mix_all" data-cat="app" style="  display: inline-block; opacity: 1;">
 				<div class="portfolio-wrapper">
 					<a href="#">
 						<img src="<s:url value='/Resource/images/pic16.jpg'/>" alt="Image 2">
@@ -99,16 +103,17 @@
 				  			</ul>
 		  			</div>
 				</div>
-			</div>			
+			</div>
+			--%>			
 			<div class="portfolio card mix_all" data-cat="card" style="  display: inline-block; opacity: 1;">
 				<div class="portfolio-wrapper">			
 					<a href="#">
-						<img src="<s:url value='/Resource/images/pic17.jpg'/>" alt="Image 2">
+						<img src="<s:url value='/Resource/images/myagenda.jpg'/>" alt="My Agenda JackSoft">
 					</a>
 					<div class="links">
-						<h4><a href="">Lorem ipsum dolor sit amet</a></h4><p class="img"><img src="<s:url value='/Resource/images/likes.png'/>"  title="likes" alt=""/>12</p><div class="clear"></div>
+						<h4><a href="">My Agenda, hari gini masih butuh kertas untuk mencatat, pakai agenda online aja.</a></h4><div class="clear"></div>
 							<ul>
-				  				<li><a href="#"><span>December 14, 2013</span></a></li>
+				  				<li><a href="#"><span>01 Oktober 2015</span></a></li>
 				  			</ul>
 		  			</div>
 				</div>
@@ -116,17 +121,17 @@
 			<div class="portfolio card mix_all" data-cat="card" style="  display: inline-block; opacity: 1;">
 				<div class="portfolio-wrapper">			
 					<a href="#">
-						<img src="<s:url value='/Resource/images/pic18.jpg'/>" alt="Image 2">
+						<img src="<s:url value='/Resource/images/highway.jpg'/>" alt="Highway Traffic">
 					</a>
 					<div class="links">
-						<h4><a href="">Lorem ipsum dolor sit amet</a></h4><p class="img"><img src="<s:url value='/Resource/images/likes.png'/>"  title="likes" alt=""/>12</p><div class="clear"></div>
+						<h4><a href="">Takut kejebak macet di jalan tol, cek dengan aplikasi ini dulu dunk..</a></h4><div class="clear"></div>
 							<ul>
-				  				<li><span><a href="#">December 14, 2013</a></span></li>
+				  				<li><span><a href="#">20 Desember 2014</a></span></li>
 				  			</ul>
 		  			</div>
 				</div>
 			</div>	
-			<div class="portfolio logo1 mix_all" data-cat="logo" style=" ">
+			<%-- <div class="portfolio logo1 mix_all" data-cat="logo" style=" ">
 				<div class="portfolio-wrapper">			
 					<a href="#">
 						<img src="<s:url value='/Resource/images/pic19.jpg'/>" alt="Image 2">
@@ -138,7 +143,8 @@
 				  			</ul>
 		  			</div>
 				</div>
-			</div>																																							
+			</div>
+																																										
 			<div class="portfolio app mix_all" data-cat="app" style="  display: inline-block; opacity: 1;">
 				<div class="portfolio-wrapper">			
 					<a href="#">
@@ -151,7 +157,8 @@
 				  			</ul>
 		  			</div>
 				</div>
-			</div>														
+			</div>
+			--%>														
 			<div class="clear"> </div>
 		</div>			
 	  </div>
