@@ -61,7 +61,7 @@
 				   <h5 class="leave">Contact Info</h5><div class="clear"></div>
 				   <div class="contact-list">
 						<ul>
-							<li><img src="<s:url value='/Resource/images/address.png'/>" alt=""><p>Duta Square Blok C-31 Juru Mudi <br>&nbsp;Tangerang 15124</p><div class="clear"></div></li>
+							<li><img src="<s:url value='/Resource/images/address.png'/>" alt=""><p>Duta Square Blok C-35 Juru Mudi <br>&nbsp;Tangerang 15124</p><div class="clear"></div></li>
 							<li><img src="<s:url value='/Resource/images/phone.png'/>" alt=""><p>Phone / WA: +62 856 9393 8630<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><div class="clear"></div></li>
 							<li><img src="<s:url value='/Resource/images/msg.png'/>" alt=""><p>Email: <span class="yellow1"><a href="#">sales(at)jakartasoftware.com</a></span></p><div class="clear"></div></li>
 					   </ul>

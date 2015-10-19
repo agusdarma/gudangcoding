@@ -70,7 +70,7 @@
 							<li><img src="<s:url value='/Resource/images/address.png'/>"
 								alt="" />
 							<p>
-									Duta Square Blok C-31 Juru Mudi <br>&nbsp;Tangerang 15124
+									Duta Square Blok C-35 Juru Mudi <br>&nbsp;Tangerang 15124
 								</p>
 								<div class="clear"></div></li>
 							<li><img src="<s:url value='/Resource/images/phone.png'/>"
