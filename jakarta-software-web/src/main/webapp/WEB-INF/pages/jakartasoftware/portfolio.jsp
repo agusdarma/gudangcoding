@@ -63,7 +63,19 @@
 		  			</div>
 				</div>
 			</div>
-					
+			<div class="portfolio app mix_all" data-cat="app" style="  display: inline-block; opacity: 1;">
+				<div class="portfolio-wrapper">			
+					<a href="#">
+						<img src="<s:url value='/Resource/images/homepage_sablonbalon.jpg'/>" alt="Image 2">
+					</a>
+					<div class="links">
+						<h4><a href="">www.sablonbalon.com perusahaan yang bergerak di bidang balon.</a></h4><div class="clear"></div>
+							<ul>
+				  				<li><a href="#"><span>December 14, 2012</span></a></li>
+				  			</ul>
+		  			</div>
+				</div>
+			</div>		
 			<%-- <div class="portfolio web mix_all" data-cat="web" style="  display: inline-block; opacity: 1;">
 				<div class="portfolio-wrapper">						
 					<a href="#">
